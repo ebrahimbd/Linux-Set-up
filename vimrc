@@ -65,8 +65,8 @@ nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 nnoremap <F6> :SyntasticToggleMode<CR>
 nnoremap <F7> :TagbarOpen fj<CR>
 nnoremap <F8> :GitGutterLineHighlightsToggle<CR>
-nnoremap <C-w> :GitGutterPrevHunk<CR>
-nnoremap <C-e> :GitGutterNextHunk<CR>
+"nnoremap <C-w> :GitGutterPrevHunk<CR>
+"nnoremap <C-e> :GitGutterNextHunk<CR>
 nnoremap <C-a> :bp<CR>
 nnoremap <C-d> :bn<CR>
 
