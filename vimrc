@@ -38,6 +38,11 @@ Plugin 'SirVer/ultisnips'
 " Snippets are separated from the engine. Add this if you want them:
 Plugin 'honza/vim-snippets'
 
+Plugin 'dhruvasagar/vim-table-mode'
+
+"switching between source and header files
+Plugin 'a.vim'
+
 " All of your Plugins must be added before the following line
 "
 call vundle#end()            " required
@@ -59,6 +64,9 @@ nnoremap <F4> :NERDTreeToggle<CR>
 nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 nnoremap <F6> :SyntasticToggleMode<CR>
 nnoremap <F7> :TagbarOpen fj<CR>
+nnoremap <F8> :GitGutterLineHighlightsToggle<CR>
+nnoremap <C-w> :GitGutterPrevHunk<CR>
+nnoremap <C-e> :GitGutterNextHunk<CR>
 nnoremap <C-a> :bp<CR>
 nnoremap <C-d> :bn<CR>
 
@@ -70,9 +78,13 @@ set noswapfile
 set wildmenu
 set bs=2
 syntax on
-:set nu
-:set softtabstop=4 shiftwidth=4 expandtab
-:colo heroku-terminal
+set nu
+set softtabstop=4 shiftwidth=4 expandtab
+colo heroku-terminal
+set undofile                " Save undos after file closes
+set undodir=$HOME/.vim/undo " where to save undo histories
+set undolevels=1000         " How many undos
+set undoreload=10000        " number of lines to save for undo
 
 "To highlight lines longer than 120 characters.
 augroup vimrc_autocmds
@@ -122,3 +134,9 @@ let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
+
+"make vim recognizing snippets dir
+set runtimepath+=~/.vim/my-snippets/
+" use different snippets dir
+let g:UltiSnipsSnippetsDir='~/.vim/my-snippets/'
+let g:UltiSnipsSnippetDirectories=["my-snippets"]
