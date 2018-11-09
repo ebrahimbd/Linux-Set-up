@@ -86,11 +86,16 @@ set undodir=$HOME/.vim/undo " where to save undo histories
 set undolevels=1000         " How many undos
 set undoreload=10000        " number of lines to save for undo
 
+"if you want to highlight the whole line
 "To highlight lines longer than 120 characters.
-augroup vimrc_autocmds
-    autocmd BufEnter * highlight OverLength ctermbg=red ctermfg=white guibg=#111111
-    autocmd BufEnter * match OverLength /\%120v.*/
-augroup END
+"augroup vimrc_autocmds
+"    autocmd BufEnter * highlight OverLength ctermbg=red ctermfg=white guibg=#111111
+"    autocmd BufEnter * match OverLength /\%120v.*/
+"augroup END
+
+"if you need to not pollute the whole line
+highlight ColorColumn ctermbg=grey 
+call matchadd('ColorColumn', '\%120v', 100) 
 
 "To open file right where it was closed.
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
