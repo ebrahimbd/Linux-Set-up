@@ -140,3 +140,5 @@ set runtimepath+=~/.vim/my-snippets/
 " use different snippets dir
 let g:UltiSnipsSnippetsDir='~/.vim/my-snippets/'
 let g:UltiSnipsSnippetDirectories=["my-snippets"]
+
+set listchars=tab:>-,trail:~,extends:>,precedes:<
