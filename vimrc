@@ -45,6 +45,12 @@ Plugin 'a.vim'
 "indent lines 
 Plugin 'yggdroot/indentline'
 
+"silver search
+Plugin 'mileszs/ack.vim'
+
+"undo tree
+Plugin 'mbbill/undotree'
+
 " All of your Plugins must be added before the following line
 "
 call vundle#end()            " required
@@ -62,18 +68,17 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 
 "Remove all trailing whitespace by pressing F5
-nnoremap <F4> :NERDTreeToggle<CR>
-nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
-nnoremap <F6> :SyntasticToggleMode<CR>
-nnoremap <F7> :TagbarOpen fj<CR>
-nnoremap <F8> :GitGutterLineHighlightsToggle<CR>
-"nnoremap <C-w> :GitGutterPrevHunk<CR>
-"nnoremap <C-e> :GitGutterNextHunk<CR>
-nnoremap <C-a> :bp<CR>
-nnoremap <C-d> :bn<CR>
+nnoremap <leader>n :NERDTreeToggle<CR>
+nnoremap <F3>      :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
+nnoremap <leader>T :TagbarOpen fj<CR>
+nnoremap <leader>g :GitGutterLineHighlightsToggle<CR>
+nnoremap <leader>gp :GitGutterPrevHunk<CR>
+nnoremap <leader>gn :GitGutterNextHunk<CR>
+nnoremap <leader>a :bp<CR>
+nnoremap <leader>d :bn<CR>
 
-" tasks
-nnoremap <leader>t :Ag \(FIXME\)\\|\(TODO\)<cr>
+"undo tree toggle
+nnoremap <leader>u :UndotreeToggle<cr>
 
 set t_Co=256
 set incsearch
@@ -152,3 +157,6 @@ let g:UltiSnipsSnippetsDir='~/.vim/my-snippets/'
 let g:UltiSnipsSnippetDirectories=["my-snippets"]
 
 set listchars=tab:>-,trail:~,extends:>,precedes:<
+
+"search the word under the cursor using ack
+let g:ack_use_cword_for_empty_search = 0
