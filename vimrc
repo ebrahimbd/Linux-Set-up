@@ -31,7 +31,6 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'ludovicchabant/vim-gutentags'
 Plugin 'Valloric/YouCompleteMe'
-
 " Track the engine.
 Plugin 'SirVer/ultisnips'
 
@@ -42,6 +41,9 @@ Plugin 'dhruvasagar/vim-table-mode'
 
 "switching between source and header files
 Plugin 'a.vim'
+
+"indent lines 
+Plugin 'yggdroot/indentline'
 
 " All of your Plugins must be added before the following line
 "
@@ -69,6 +71,9 @@ nnoremap <F8> :GitGutterLineHighlightsToggle<CR>
 "nnoremap <C-e> :GitGutterNextHunk<CR>
 nnoremap <C-a> :bp<CR>
 nnoremap <C-d> :bn<CR>
+
+" tasks
+nnoremap <leader>t :Ag \(FIXME\)\\|\(TODO\)<cr>
 
 set t_Co=256
 set incsearch
