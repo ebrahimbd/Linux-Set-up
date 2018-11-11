@@ -70,7 +70,7 @@ filetype plugin indent on    " required
 "Remove all trailing whitespace by pressing F5
 nnoremap <leader>n :NERDTreeToggle<CR>
 nnoremap <F3>      :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
-nnoremap <leader>T :TagbarOpen fj<CR>
+nnoremap <leader>t :TagbarOpen fj<CR>
 nnoremap <leader>g :GitGutterLineHighlightsToggle<CR>
 nnoremap <leader>gp :GitGutterPrevHunk<CR>
 nnoremap <leader>gn :GitGutterNextHunk<CR>
