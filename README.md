@@ -1,2 +1,5 @@
 # vimrc
-My vimrc file
+.vimrc file
+
+# ackrc
+.ackrc file
