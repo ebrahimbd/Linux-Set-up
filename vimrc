@@ -42,7 +42,7 @@ Plugin 'dhruvasagar/vim-table-mode'
 "switching between source and header files
 Plugin 'a.vim'
 
-"indent lines 
+"indent lines
 Plugin 'yggdroot/indentline'
 
 "silver search
@@ -50,6 +50,9 @@ Plugin 'mileszs/ack.vim'
 
 "undo tree
 Plugin 'mbbill/undotree'
+
+"sub mode
+Plugin 'kana/vim-submode'
 
 " All of your Plugins must be added before the following line
 "
@@ -76,12 +79,16 @@ nnoremap <leader>gp :GitGutterPrevHunk<CR>
 nnoremap <leader>gn :GitGutterNextHunk<CR>
 nnoremap <leader>a :bp<CR>
 nnoremap <leader>d :bn<CR>
+nnoremap <leader>i :IndentLinesToggle<CR>
 
 "undo tree toggle
 nnoremap <leader>u :UndotreeToggle<cr>
 
+nmap <silent> <leader>p :set paste<CR>"*p:set nopaste<CR>
+
 set t_Co=256
 set incsearch
+set hlsearch
 set hidden
 set showmatch
 set noswapfile
@@ -104,8 +111,12 @@ set undoreload=10000        " number of lines to save for undo
 "augroup END
 
 "if you need to not pollute the whole line
-highlight ColorColumn ctermbg=grey 
-call matchadd('ColorColumn', '\%120v', 100) 
+highlight ColorColumn ctermbg=grey
+call matchadd('ColorColumn', '\%120v', 100)
+
+"to update/save after the file has been modified and no key has been pressed
+"for update time
+autocmd CursorHold,CursorHoldI * update
 
 "To open file right where it was closed.
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
@@ -157,6 +168,9 @@ let g:UltiSnipsSnippetsDir='~/.vim/my-snippets/'
 let g:UltiSnipsSnippetDirectories=["my-snippets"]
 
 set listchars=tab:>-,trail:~,extends:>,precedes:<
+
+"ycm no checking over the file size
+let g:ycm_disable_for_files_larger_than_kb = 0
 
 "search the word under the cursor using ack
 let g:ack_use_cword_for_empty_search = 0
