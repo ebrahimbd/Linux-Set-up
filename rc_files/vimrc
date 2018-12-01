@@ -54,6 +54,9 @@ Plugin 'mbbill/undotree'
 "sub mode
 Plugin 'kana/vim-submode'
 
+"to tabularize stuffs if need
+Plugin 'junegunn/vim-easy-align'
+
 " All of your Plugins must be added before the following line
 "
 call vundle#end()            " required
@@ -102,6 +105,7 @@ set undofile                " Save undos after file closes
 set undodir=$HOME/.vim/undo " where to save undo histories
 set undolevels=1000         " How many undos
 set undoreload=10000        " number of lines to save for undo
+set updatetime=5000
 
 "if you want to highlight the whole line
 "To highlight lines longer than 120 characters.
@@ -119,10 +123,13 @@ call matchadd('ColorColumn', '\%120v', 100)
 autocmd CursorHold,CursorHoldI * update
 
 "To open file right where it was closed.
-au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
+    \| exe "normal! g'\"" | endif
+endif
 
 "To clear the white space and indent the files after writing,
-"TODO : 
+"TODO :
 
 "For the airline symbols.
 let g:airline_powerline_fonts = 1
