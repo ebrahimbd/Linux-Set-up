@@ -2,10 +2,15 @@
 The current complete set up currently consist of following files.
 
 | 1 | .vimrc file         | VIM runtime configurations                    |
+
 | 2 | .ackrc file         | ACK Tool run time configurations              |
+
 | 3 | c.vim               | C Syntax File                                 |
+
 | 4 | badwolf.vim         | Airline-Colortheme                            |
+
 | 5 | Heroku-terminal.vim | Modified Heroku Terminal as per my preference |
+
 | 6 | Install Script      | An Installation script to make life easy      |
 
 ## vimrc file
