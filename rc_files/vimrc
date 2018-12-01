@@ -121,6 +121,9 @@ autocmd CursorHold,CursorHoldI * update
 "To open file right where it was closed.
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 
+"To clear the white space and indent the files after writing,
+"TODO : 
+
 "For the airline symbols.
 let g:airline_powerline_fonts = 1
 
