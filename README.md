@@ -60,27 +60,27 @@ junegunn/vim-easy-align
 
 ### Mappings
 
-nnoremap <leader>n :NERDTreeToggle<CR>
+`nnoremap <leader>n :NERDTreeToggle<CR?`
 
-nnoremap <F3>      :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
+`nnoremap <F3>      :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR?`
 
-nnoremap <leader>t :TagbarOpen fj<CR>
+`nnoremap <leader>t :TagbarOpen fj<CR?`
 
-nnoremap <leader>g :GitGutterLineHighlightsToggle<CR>
+`nnoremap <leader>g :GitGutterLineHighlightsToggle<CR?`
 
-nnoremap <leader>gp :GitGutterPrevHunk<CR>
+`nnoremap <leader>gp :GitGutterPrevHunk<CR?`
 
-nnoremap <leader>gn :GitGutterNextHunk<CR>
+`nnoremap <leader>gn :GitGutterNextHunk<CR?`
 
-nnoremap <leader>a :bp<CR>
+`nnoremap <leader>a :bp<CR?`
 
-nnoremap <leader>d :bn<CR>
+`nnoremap <leader>d :bn<CR?`
 
-nnoremap <leader>i :IndentLinesToggle<CR>
+`nnoremap <leader>i :IndentLinesToggle<CR?`
 
-nnoremap <leader>u :UndotreeToggle<cr>
+`nnoremap <leader>u :UndotreeToggle<cr>
 
-nmap <silent> <leader>p :set paste<CR>"*p:set nopaste<CR>
+`nmap <silent> <leader>p :set paste<CR>"*p:set nopaste<CR?`
 
 ### Features
 
