@@ -47,8 +47,12 @@ URL     : https://www.vim.org/scripts/script.php?script_id=3064
 -Little change to the defaults one
 
 # Installation
-To install the set up, clone using 
+To install the set up, clone using
+
 `cd ~`
+
 `git clone https://github.com/Manyyack/Linux-Set-up.git`
+
 and run
+
 `sudo ./install.sh`
