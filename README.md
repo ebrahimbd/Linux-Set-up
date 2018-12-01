@@ -9,40 +9,46 @@ The current complete set up currently consist of following files.
 | 6 | Install Script      | An Installation script to make life easy      |
 
 ## vimrc file
-###Pre Installed Plugins
 
-###Mappings
+### Pre Installed Plugins
 
-####Normal Mode
+### Mappings
 
-####Insert Mode
+#### Normal Mode
 
-####Visual Mode
+#### Insert Mode
 
-###Features
+#### Visual Mode
 
-##ackrc file
+### Features
 
-###Features
+## ackrc file
+
+### Features
 -Ignores tags and cscope.out files
 
 -using smart-case
 
 -alphabetically sort
 
-##C.vim
+## C.vim
 Author  : Mikhail Wolfson
 
 URL     : https://www.vim.org/scripts/script.php?script_id=3064
 
-##badwolf.vim
+## badwolf.vim
 -Default as provided with plugin airline themes
 
-##heroku-terminal.vim
+## heroku-terminal.vim
 -Little change to the defaults one
 
-#Installation
-To install the set up, clone using https://github.com/Manyyack/Linux-Set-up.git
+# Installation
+To install the set up, clone using
+
+`cd ~`
+
+`git clone https://github.com/Manyyack/Linux-Set-up.git`
+
 and run
-cd Linux-Set-up
-sudo ./install.sh
+
+`sudo ./install.sh`
