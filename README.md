@@ -1,35 +1,93 @@
 # Complete Linux Set-Up
-The current complete set up currently consist of following files.
+The current complete set up currently consist of following files
 
-.vimrc file         :   VIM runtime configurations
+1).vimrc file
 
-.ackrc file         :   ACK Tool run time configurations
+2).ackrc file
 
-c.vim               :   C Syntax File
+3)c.vim
 
-badwolf.vim         :   Airline-Colortheme
+4)badwolf.vim
 
-Heroku-terminal.vim :   Modified Heroku Terminal as per my preference
+5)Heroku-terminal.vim
 
-Install Script      :   An Installation script to make life easy
+6)Install Script
 
 ## vimrc file
 
 ### Pre Installed Plugins
+tpope/vim-fugitive
+
+flazz/vim-colorschemes
+
+vim-airline/vim-airline
+
+airblade/vim-gitgutter
+
+raimondi/delimitmate
+
+majutsushi/tagbar
+
+scrooloose/nerdtree
+
+hari-rangarajan/cctree
+
+vim-airline/vim-airline-themes
+
+scrooloose/nerdcommenter
+
+ludovicchabant/vim-gutentags
+
+Valloric/YouCompleteMe
+
+SirVer/ultisnips
+
+honza/vim-snippets
+
+dhruvasagar/vim-table-mode
+
+a.vim
+
+yggdroot/indentline
+
+mileszs/ack.vim
+
+mbbill/undotree
+
+kana/vim-submode
+
+junegunn/vim-easy-align
 
 ### Mappings
 
-#### Normal Mode
+nnoremap <leader>n :NERDTreeToggle<CR>
 
-#### Insert Mode
+nnoremap <F3>      :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 
-#### Visual Mode
+nnoremap <leader>t :TagbarOpen fj<CR>
+
+nnoremap <leader>g :GitGutterLineHighlightsToggle<CR>
+
+nnoremap <leader>gp :GitGutterPrevHunk<CR>
+
+nnoremap <leader>gn :GitGutterNextHunk<CR>
+
+nnoremap <leader>a :bp<CR>
+
+nnoremap <leader>d :bn<CR>
+
+nnoremap <leader>i :IndentLinesToggle<CR>
+
+nnoremap <leader>u :UndotreeToggle<cr>
+
+nmap <silent> <leader>p :set paste<CR>"*p:set nopaste<CR>
 
 ### Features
+
+Description to be added soon
 
 ## ackrc file
 
-### Features
 -Ignores tags and cscope.out files
 
 -using smart-case
