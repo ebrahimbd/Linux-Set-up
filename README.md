@@ -5,13 +5,15 @@ The current complete set up currently consist of following files
 
 2).ackrc file
 
-3)c.vim
+3).gitconfig file
 
-4)badwolf.vim
+4)c.vim
 
-5)Heroku-terminal.vim
+5)badwolf.vim
 
-6)Install Script
+6)Heroku-terminal.vim
+
+7)Install Script
 
 ## vimrc file
 
@@ -93,6 +95,10 @@ Description to be added soon
 -using smart-case
 
 -alphabetically sort
+
+## gitconfig file 
+
+-Not the one you should be using.
 
 ## C.vim
 Author  : Mikhail Wolfson
