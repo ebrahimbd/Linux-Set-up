@@ -1,0 +1,17 @@
+[user]
+	email = shreel.chhatbar@gmail.com
+	name = Shreel Chhatbar
+[merge]
+	tool = meld
+[diff]
+	tool = meld
+[core]
+        editor = vim
+[help]
+	# Automatically correct and execute mistyped commands
+        autocorrect = 1
+[color "status"]
+
+	added = 10 
+	changed = 11
+        untracked = 9
