@@ -2,11 +2,10 @@
 " Language:	C Additions
 " Maintainer:	Mikhail Wolfson <mywolfson@gmail.com>
 " URL: http://web.mit.edu/wolfsonm
-" Last Change:	2017 Dec. 4
-" Version: 0.5
+" Last Change:	2010 Dec. 3
+" Version: 0.4
 "
 " Changelog:
-"   0.5 - add support for constants -- github.com/agfline
 "   0.4 - updates and fixes to cDelimiter to fix break with foldmethod=syntax,
 "         entirely suggested and solved by Ivan Freitas
 "         <ivansichfreitas@gmail.com>
@@ -232,6 +231,11 @@ syn keyword	cAnsiName	errno environ
 syn keyword	cAnsiName	STDC CX_LIMITED_RANGE
 syn keyword	cAnsiName	STDC FENV_ACCESS
 syn keyword	cAnsiName	STDC FP_CONTRACT
+
+syn keyword cAnsiName AF_INET SOCK_STREAM INADDR_ANY AF_INET
+syn keyword cAnsiName SOL_SOCKET SO_REUSEPORT SO_REUSEADDR
+syn keyword cAnsiName SO_RCVTIMEO IPPROTO_TCP TCP_NODELAY
+syn keyword cAnsiName SOCK_DGRAM POLLIN
 
 syn keyword	cAnsiName	and bitor not_eq xor
 syn keyword	cAnsiName	and_eq compl or xor_eq
