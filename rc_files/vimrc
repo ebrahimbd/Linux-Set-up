@@ -83,6 +83,7 @@ nnoremap <leader>gn :GitGutterNextHunk<CR>
 nnoremap <leader>a :bp<CR>
 nnoremap <leader>d :bn<CR>
 nnoremap <leader>i :IndentLinesToggle<CR>
+nnoremap <leader>h :A<CR>
 
 "undo tree toggle
 nnoremap <leader>u :UndotreeToggle<cr>
@@ -160,6 +161,7 @@ let g:CCTreeMinVisibleDepth = 1
 
 "gutentags
 let g:gutentags_modules = ['ctags']
+let g:gutentags_ctags_extra_args = ['--fields=+l']
 
 "UltiSnips
 " Trigger configuration. Do not use <tab> if you use
@@ -181,6 +183,9 @@ set listchars=tab:>-,trail:~,extends:>,precedes:<
 
 "ycm no checking over the file size
 let g:ycm_disable_for_files_larger_than_kb = 0
+
+"ycm getting info from the tag file
+let g:ycm_collect_identifiers_from_tags_files = 1
 
 "search the word under the cursor using ack
 let g:ack_use_cword_for_empty_search = 0

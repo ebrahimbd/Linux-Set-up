@@ -27,8 +27,8 @@ echo "Setting up the colorschemes "
 ln ./colors/heroku-terminal.vim ~/.vim/bundle/vim-colorschemes/colors/heroku-terminal.vim
 ln ./colors/badwolf.vim ~/.vim/bundle/vim-airline-themes/autoload/airline/themes/badwolf.vim
 
-echo "Adding the git config"
-ln ./rc_files/gitconfig ~/.gitconfig
+#echo "Adding the git config"
+#ln ./rc_files/gitconfig ~/.gitconfig
 
 echo "Installing YCM engine and updating it. "
 cd ~/.vim/bundle/YouCompleteMe

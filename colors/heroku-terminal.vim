@@ -241,7 +241,7 @@ if &t_Co == 88 || &t_Co == 256
   highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
   call <SID>X("NonText", s:comment, "", "")
   call <SID>X("SpecialKey", s:selection, "", "")
-  call <SID>X("Search", s:yellow, s:background, "")
+  call <SID>X("Search", s:yellow, s:red, "")
   call <SID>X("Search", s:yellow, s:red, "")
   call <SID>X("TabLine", s:foreground, s:background, "reverse")
   call <SID>X("StatusLine", s:window, s:yellow, "reverse")
