@@ -189,3 +189,6 @@ let g:ycm_collect_identifiers_from_tags_files = 1
 
 "search the word under the cursor using ack
 let g:ack_use_cword_for_empty_search = 0
+
+"space between comment and stuff like that
+let NERDSpaceDelims=1

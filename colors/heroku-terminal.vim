@@ -5,6 +5,7 @@
 " - It's for terminal vim only;
 " - Hex color conversion functions borrowed from the theme 'Desert256'"
 
+let s:black = "000000"
 let s:background = "1b1b24"
 let s:foreground = "8584ae"
 let s:selection = "ffffff"
@@ -19,6 +20,7 @@ let s:blue = "09afed"
 let s:purple = "a292ff"
 let s:window = "17171d"
 let s:split = "c1cdc1"
+let s:lightpink = "ffb6c1"
 
 set background=dark
 hi clear
@@ -259,7 +261,7 @@ if &t_Co == 88 || &t_Co == 256
   if version >= 700
     call <SID>X("CursorLine", "", s:line, "none")
     call <SID>X("CursorColumn", "", s:line, "none")
-    call <SID>X("PMenu", s:foreground, s:aqua, "none")
+    call <SID>X("PMenu", s:black, s:lightpink, "none")
     call <SID>X("PMenuSel", s:red, s:selection, "reverse")
   end
   if version >= 703
@@ -268,7 +270,7 @@ if &t_Co == 88 || &t_Co == 256
 
   " Standard Highlighting
   call <SID>X("Comment", s:comment, "", "")
-  call <SID>X("Todo", s:comment, s:foreground, "")
+  call <SID>X("Todo", s:comment, s:red, "")
   call <SID>X("Title", s:comment, "", "")
   call <SID>X("Identifier", s:red, "", "none")
   call <SID>X("Statement", s:foreground, "", "")

@@ -11,6 +11,7 @@ sudo apt install fonts-powerline exuberant-ctags cscope build-essential cmake3 c
 echo "Replacing the .vimrc files "
 rm ~/.vimrc
 ln ./rc_files/vimrc ~/.vimrc
+mkdir ~/.vim/undo
 
 echo "Installing all the plugins "
 vim +PluginInstall +qal
