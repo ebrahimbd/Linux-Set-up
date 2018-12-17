@@ -1,6 +1,13 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 set laststatus=2
+" Customizing the Airline
+" function! AirlineInit()
+  " let g:airline_section_b = airline#section#create(['branch'])
+  " let g:airline_section_x = airline#section#create(['hunks'])
+  " let g:airline_section_y = '%y'
+" endfunction
+" autocmd User AirlineAfterInit call AirlineInit()
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -82,8 +89,14 @@ nnoremap <leader>gp :GitGutterPrevHunk<CR>
 nnoremap <leader>gn :GitGutterNextHunk<CR>
 nnoremap <leader>a :bp<CR>
 nnoremap <leader>d :bn<CR>
+nnoremap <leader>x :bd<CR>
 nnoremap <leader>i :IndentLinesToggle<CR>
 nnoremap <leader>h :A<CR>
+" :nmap <leader>w :s/\(<c-r>=expand("<cword>")<cr>\)/
+nnoremap <leader>f :Ack<space>
+nnoremap <leader>fs :Ack<space><c-r>=expand("<cword>")<cr><CR>
+nnoremap <leader>cr :CCTreeTraceReverse<CR>
+nnoremap <leader>cf :CCTreeTraceForward<CR>
 
 "undo tree toggle
 nnoremap <leader>u :UndotreeToggle<cr>
@@ -139,14 +152,28 @@ if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
 
+" unicode symbols
+let g:airline_left_sep = '»'
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '«'
+let g:airline_right_sep = '◀'
+let g:airline_symbols.linenr = '␊'
+let g:airline_symbols.linenr = '␤'
+let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.paste = 'Þ'
+let g:airline_symbols.paste = '∥'
+let g:airline_symbols.whitespace = 'Ξ'
+let g:airline_symbols.filetype = 'S'
+
 let g:airline_left_sep = ''
-let g:airline_left_alt_sep = ''
 let g:airline_right_sep = ''
-let g:airline_right_alt_sep = ''
 let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
-let g:airline_symbols.linenr = '☰'
-let g:airline_symbols.maxlinenr = ''
+let g:airline_symbols.linenr = ''
+let g:airline_symbols.maxlinenr = ''
+let g:airline_symbols.filetype = 'S'
 let g:airline_theme='badwolf'
 
 let g:airline#extensions#tabline#enabled = 1
@@ -156,8 +183,8 @@ let g:airline#extensions#tabline#formatter = 'default'
 
 "For the CCTree
 let g:CCTreeCscopeDb = "cscope.out"
-let g:CCTreeRecursiveDepth = 1
-let g:CCTreeMinVisibleDepth = 1
+let g:CCTreeRecursiveDepth = 3
+let g:CCTreeMinVisibleDepth = 3
 
 "gutentags
 let g:gutentags_modules = ['ctags']
