@@ -1,19 +1,19 @@
 # Complete Linux Set-Up
 The current complete set up currently consist of following files
 
-1).vimrc file
+##vimrc file
 
-2).ackrc file
+##ackrc file
 
-3).gitconfig file
+##gitconfig file
 
-4)c.vim
+##c.vim
 
-5)badwolf.vim
+##badwolf.vim
 
-6)Heroku-terminal.vim
+##Heroku-terminal.vim
 
-7)Install Script
+##Install Script
 
 ## vimrc file
 
