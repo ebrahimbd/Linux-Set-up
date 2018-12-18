@@ -1,22 +1,22 @@
 # Complete Linux Set-Up
 The current complete set up currently consist of following files
 
-### vimrc file
+## vimrc file
 vim configuration files contains vim settings, plugin and custom maps
 
-### ackrc file
+## ackrc file
 ack tool configuration file
 
-### c.vim
+## c.vim
 syntax file for c codes
 
-### badwolf.vim
+## badwolf.vim
 airline plugin modified theme
 
-### Heroku-terminal.vim
+## Heroku-terminal.vim
 colorscheme theme modified
 
-### Install Script
+## Install Script
 script that makes the set up easier by automating
 
 ## vimrc file
