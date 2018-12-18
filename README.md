@@ -22,11 +22,11 @@ script that makes the set up easier by automating
 ## vimrc file
 
 ### Pre Installed Plugins
--tpope/vim-fugitive
+- tpope/vim-fugitive
 
 Git wrapper within the vim
 
--flazz/vim-colorschemes
+- flazz/vim-colorschemes
 
 Awesome colorschemes for vim
 
@@ -147,7 +147,7 @@ Open/Close NerdTree
 
 ## gitconfig file
 
--Not the one you should be using.
+- Not the one you should be using.
 
 ## C.vim
 Author  : Mikhail Wolfson
