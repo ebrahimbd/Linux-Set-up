@@ -22,94 +22,94 @@ script that makes the set up easier by automating
 ## vimrc file
 
 ### Pre Installed Plugins
-tpope/vim-fugitive
+-tpope/vim-fugitive
 
-    Git wrapper within the vim
+Git wrapper within the vim
 
-flazz/vim-colorschemes
+-flazz/vim-colorschemes
 
-    Awesome colorschemes for vim
+Awesome colorschemes for vim
 
-vim-airline/vim-airline
+-vim-airline/vim-airline
 
-    Sexy statusline that is integrated with tagbar, gitgutter, fugitive and ycm
+Sexy statusline that is integrated with tagbar, gitgutter, fugitive and ycm
 
-vim-airline/vim-airline-themes
+-vim-airline/vim-airline-themes
 
-    Sexy status line themes
+Sexy status line themes
 
-airblade/vim-gitgutter
+-airblade/vim-gitgutter
 
-    git diff plugin.
+git diff plugin.
 
-raimondi/delimitmate
+-raimondi/delimitmate
 
-    Things you hate to type when you are heavy user of IDE
+Things you hate to type when you are heavy user of IDE
 
-majutsushi/tagbar
+-majutsushi/tagbar
 
-    Used for jumping to different tags within a file
+Used for jumping to different tags within a file
 
-scrooloose/nerdtree
+-scrooloose/nerdtree
 
-    Used for navigating source codes
+Used for navigating source codes
 
-hari-rangarajan/cctree
+-hari-rangarajan/cctree
 
-    I simply low this. Used to trace functions, very helpful in long projects
+I simply low this. Used to trace functions, very helpful in long projects
 
-scrooloose/nerdcommenter
+-scrooloose/nerdcommenter
 
-    A quick commenting plugin
+A quick commenting plugin
 
-ludovicchabant/vim-gutentags
+-ludovicchabant/vim-gutentags
 
-    the best plugin if you are someone working with a huge source code. Generates tags on the go from the root folder
+the best plugin if you are someone working with a huge source code. Generates tags on the go from the root folder
 
-Valloric/YouCompleteMe
+-Valloric/YouCompleteMe
 
-    Autocomplete ?
+Autocomplete ?
 
-SirVer/ultisnips
+-SirVer/ultisnips
 
-    PASS
+PASS
 
-honza/vim-snippets
+-honza/vim-snippets
 
-    PASS
+PASS
 
-dhruvasagar/vim-table-mode
+-dhruvasagar/vim-table-mode
 
-    |---+-----+--------+--------+----+-----|
+|---+-----+--------+--------+----+-----|
 
-    | I | Can | Create | Tables | in | Vim |
+| I | Can | Create | Tables | in | Vim |
 
-    |---+-----+--------+--------+----+-----|
+|---+-----+--------+--------+----+-----|
 
-a.vim
+-a.vim
 
-    Jump between .c and .h files.
+Jump between .c and .h files.
 
-yggdroot/indentline
+-yggdroot/indentline
 
-    Slick indent line. Do I need to tell more.
+Slick indent line. Do I need to tell more.
 
-mileszs/ack.vim
+-mileszs/ack.vim
 
-    I really can't explain how useful this thing is.
-    TODO : Add a pic
+I really can't explain how useful this thing is.
+TODO : Add a pic
 
-mbbill/undotree
+-mbbill/undotree
 
-    Visualize your undo's
+Visualize your undo's
 
-kana/vim-submode
+-kana/vim-submode
 
-    PASS
+PASS
 
-junegunn/vim-easy-align
+-junegunn/vim-easy-align
 
-    PASS
+PASS
 
 ### Mappings
 
