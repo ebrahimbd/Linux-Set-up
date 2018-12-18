@@ -23,13 +23,9 @@ script that makes the set up easier by automating
 
 ### Pre Installed Plugins
 - tpope/vim-fugitive
-
-Git wrapper within the vim
-
+: Git wrapper within the vim
 - flazz/vim-colorschemes
-
-Awesome colorschemes for vim
-
+: Awesome colorschemes for vim
 - vim-airline/vim-airline
 
 Sexy statusline that is integrated with tagbar, gitgutter, fugitive and ycm
