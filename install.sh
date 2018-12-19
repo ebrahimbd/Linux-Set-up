@@ -7,6 +7,7 @@ fi
 
 echo "*************Going to install the Shreel's set up***************** "
 echo "Installing Vundle "
+rm -rvf ~/.vim/bundle/Vundle.vim
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 #TODO : Need to seperate depencies according to the distro.
@@ -16,6 +17,8 @@ sudo apt install fonts-powerline exuberant-ctags cscope build-essential cmake3 c
 echo "Replacing the .vimrc files "
 rm ~/.vimrc
 ln ./rc_files/vimrc ~/.vimrc
+
+rm -rvf ~/.vim/undo 
 mkdir ~/.vim/undo
 chown $1 ~/.vim/undo
 
