@@ -1,17 +1,58 @@
-[user]
-	email = shreel.chhatbar@gmail.com
-	name = Shreel Chhatbar
-[merge]
-	tool = meld
-[diff]
-	tool = meld
+[color "status"]
+    added = green bold
+    changed = yellow
+    untracked = magenta bold
+[color "branch"]
+    remote = yellow
+[color "diff"]
+    meta = blue  bold
+    whitespace = red bold
+    old = red bold
+[color]
+    branch = auto
+    diff = auto
+    status = auto
+[color "branch"]
+    current = yellow reverse
+    local = yellow 
+    remote = green
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+[color "status"]
+    added = "yellow bold"
+    changed = "green bold"
+    untracked = "cyan bold"
+[cola]
+    spellcheck = false
+[gitreview]
+    remote = origin
 [core]
-        editor = vim
+    excludesfile = /home/vvdn/.gitignore
+[alias]
+    lds = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cgreen\\ [%cn]" --decorate --date=short
+    ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cgreen\\ [%cn]" --decorate --numstat
+    ls = log --stat --pretty=short --graph
+    lol = log --graph --decorate --pretty=oneline --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cgreen\\ [%cn]" --abbrev-commit --date=short --all
+    amend = commit --amend -aC HEAD
+    clear = clean -ifd
+[user]
+	name = Shreel
+	email = shreel.chhatbar@gmail.com
+[diff]
+    tool = meld
+[merge]
+    tool = meld
+    conflictstyle = diff3
+[push]
+    default = matching
+[core]
+    editor = vim
 [help]
 	# Automatically correct and execute mistyped commands
-        autocorrect = 1
-[color "status"]
-
-	added = 10 
-	changed = 11
-        untracked = 9
+    autocorrect = 1
+[user]
+[credential]
+	helper = cache
