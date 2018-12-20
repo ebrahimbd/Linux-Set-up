@@ -17,7 +17,7 @@ echo "Replacing the .vimrc files "
 rm ~/.vimrc
 ln -s ~/Linux-Set-up/rc_files/vimrc ~/.vimrc
 
-rm -rvf ~/.vim/undo
+# rm -rvf ~/.vim/undo
 mkdir ~/.vim/undo
 chown $1 ~/.vim/undo
 
@@ -53,6 +53,11 @@ chown $1 ~/.viminfo
 echo "Putting in the .conkyrc files"
 rm ~/.conkyrc
 ln -s ~/Linux-Set-up/rc_files/conkyrc ~/.conkyrc
+
+# newvar=/home/$1/Linux-Set-up/wallpaper/linux_sudo.png
+# echo "Setting the wallpaper"
+# echo $newvar
+# sudo -u $1 gsettings set org.gnome.desktop.background picture-uri file://$newvar
 
 #echo "Adding the git config"
 #ln -s ~/Linux-Set-up/rc_files/gitconfig ~/.gitconfig
