@@ -7,7 +7,6 @@ fi
 
 echo "*************Going to install the Shreel's set up***************** "
 echo "Installing Vundle "
-rm -rvf ~/.vim/bundle/Vundle.vim
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 #TODO : Need to seperate depencies according to the distro.
