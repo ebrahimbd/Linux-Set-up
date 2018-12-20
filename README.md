@@ -1,4 +1,7 @@
 # Complete Linux Set-Up
+
+**WARNING : IF YOU ARE NOT ME, FORK THIS REPO AND REMOVE ALL THE STUFF YOU DON'T NEED**
+
 The current complete set up currently consist of following files
 
 ## vimrc file

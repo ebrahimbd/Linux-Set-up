@@ -48,8 +48,11 @@ rm ~/.vim/bundle/vim-airline-themes/autoload/airline/themes/badwolf.vim
 ln -s ~/Linux-Set-up/colors/badwolf.vim ~/.vim/bundle/vim-airline-themes/autoload/airline/themes/badwolf.vim
 
 echo "Resetting .viminfo to remove ownership of root"
-#rm ~/.viminfo
 chown $1 ~/.viminfo
+
+echo "Putting in the .conkyrc files"
+rm ~/.conkyrc
+ln -s ~/Linux-Set-up/rc_files/conkyrc ~/.conkyrc
 
 #echo "Adding the git config"
 #ln -s ~/Linux-Set-up/rc_files/gitconfig ~/.gitconfig
