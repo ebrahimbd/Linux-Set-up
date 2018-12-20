@@ -52,7 +52,9 @@ chown $1 ~/.viminfo
 
 echo "Putting in the .conkyrc files"
 rm ~/.conkyrc
+rm ~/.conkylogs
 ln -s ~/Linux-Set-up/rc_files/conkyrc ~/.conkyrc
+ln -s ~/Linux-Set-up/rc_files/conkylogs ~/.conkylogs
 
 # newvar=/home/$1/Linux-Set-up/wallpaper/linux_sudo.png
 # echo "Setting the wallpaper"
