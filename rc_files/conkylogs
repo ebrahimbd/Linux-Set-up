@@ -15,7 +15,7 @@ conky.config = {
     use_xft = true,
     font = 'Ubuntu Mono derivative Powerline:size=12',
     gap_x = 10,
-    gap_y = 20,
+    gap_y = 0,
     minimum_height = 5,
     minimum_width = 5,
     maximum_width = 1000,
@@ -40,6 +40,6 @@ conky.config = {
 
 conky.text = [[
 ${color grey}$hr
-${color lime}${tail /var/log/syslog 10 1}
+${color lime}${tail /var/log/syslog 15 2}
 ${color grey}$hr
 ]]
