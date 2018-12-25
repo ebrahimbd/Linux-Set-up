@@ -1,6 +1,6 @@
 # Complete Linux Set-Up
 
-**WARNING : IF YOU ARE NOT ME, FORK THIS REPO AND REMOVE ALL THE STUFF YOU DON'T NEED**
+**WARNING : IF YOU ARE NOT ME, FORK THIS REPO AND REMOVE ALL THE STUFF YOU DON'T NEED,**
 **I AM NOT TO BE BLAMED IF ANYTHING BREAKS**
 
 The current complete set up currently consist of following files
