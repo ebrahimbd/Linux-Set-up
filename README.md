@@ -1,6 +1,7 @@
 # Complete Linux Set-Up
 
 **WARNING : IF YOU ARE NOT ME, FORK THIS REPO AND REMOVE ALL THE STUFF YOU DON'T NEED**
+**I AM NOT TO BE BLAMED IF ANYTHING BREAKS**
 
 The current complete set up currently consist of following files
 
@@ -25,6 +26,30 @@ script that makes the set up easier by automating
 ## vimrc file
 
 ### Pre Installed Plugins
+- a.vim
+: Jump between .c and .h files.
+- mileszs/ack.vim
+: I really can't explain how useful this thing is. TODO : Add a pic
+- hari-rangarajan/cctree
+: I simply low this. Used to trace functions, very helpful in long projects
+- raimondi/delimitmate
+: Things you hate to type when you are heavy user of IDE
+- yggdroot/indentline
+: Slick indent line. Do I need to tell more.
+- scrooloose/nerdtree
+: Used for navigating source codes
+- scrooloose/nerdcommenter
+: PASS
+- honza/vim-snippets
+: PASS
+- dhruvasagar/vim-table-mode
+: used for creating tables within vim
+- majutsushi/tagbar
+: Used for jumping to different tags within a file
+- mbbill/undotree
+: Visualize your undo's
+: A quick commenting plugin
+- SirVer/ultisnips
 - tpope/vim-fugitive
 : Git wrapper within the vim
 - flazz/vim-colorschemes
@@ -35,38 +60,14 @@ script that makes the set up easier by automating
 : Sexy status line themes
 - airblade/vim-gitgutter
 : git diff plugin.
-- raimondi/delimitmate
-: Things you hate to type when you are heavy user of IDE
-- majutsushi/tagbar
-: Used for jumping to different tags within a file
-- scrooloose/nerdtree
-: Used for navigating source codes
-- hari-rangarajan/cctree
-: I simply low this. Used to trace functions, very helpful in long projects
-- scrooloose/nerdcommenter
-: A quick commenting plugin
-- ludovicchabant/vim-gutentags
-: the best plugin if you are someone working with a huge source code. Generates tags on the go from the root folder
-- Valloric/YouCompleteMe
-: Autocomplete ?
-- SirVer/ultisnips
-: PASS
-- honza/vim-snippets
-: PASS
-- dhruvasagar/vim-table-mode
-: | I | Can | Create | Tables | in | Vim |
-- a.vim
-: Jump between .c and .h files.
-- yggdroot/indentline
-: Slick indent line. Do I need to tell more.
-- mileszs/ack.vim
-: I really can't explain how useful this thing is. TODO : Add a pic
-- mbbill/undotree
-: Visualize your undo's
 - kana/vim-submode
 : PASS
 - junegunn/vim-easy-align
 : PASS
+- ludovicchabant/vim-gutentags
+: the best plugin if you are someone working with a huge source code. Generates tags on the go from the root folder
+- Valloric/YouCompleteMe
+: Autocomplete ?
 
 ### Mappings
 
@@ -177,4 +178,4 @@ To install the set up, clone using
 
 and run
 
-`sudo ./install.sh [username]`
+`./install.sh`
