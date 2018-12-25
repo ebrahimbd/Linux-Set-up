@@ -1,6 +1,7 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 set laststatus=2
+
 " Customizing the Airline
 " function! AirlineInit()
 " let g:airline_section_b = airline#section#create(['branch'])
@@ -18,51 +19,66 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
+"silver search
+Plugin 'mileszs/ack.vim'
+
+"switching between source and header files
+Plugin 'a.vim'
+
+"Check where the function jumps
+Plugin 'hari-rangarajan/cctree'
+
+"Auto Closing Brackets or something like that.
+Plugin 'raimondi/delimitmate'
+
+"indent lines
+Plugin 'yggdroot/indentline'
+
+" Directory tree within the vim
+Plugin 'scrooloose/nerdtree'
+
+"Sexy commenting
+Plugin 'scrooloose/nerdcommenter'
+
+" Your best friend
+Plugin 'majutsushi/tagbar'
+
+"undo tree
+Plugin 'mbbill/undotree'
+
+" Track the engine.
+Plugin 'SirVer/ultisnips'
+
+" Airline and it's themes
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+
+" Snippets are separated from the engine. Add this if you want them:
+Plugin 'honza/vim-snippets'
+
+"Awesome for creating tables
+Plugin 'dhruvasagar/vim-table-mode'
+
 "Some thing to do with the git...
 Plugin 'tpope/vim-fugitive'
 
 "Colorschemes.
 Plugin 'flazz/vim-colorschemes'
 
-
-Plugin 'vim-airline/vim-airline'
+"Something to do with the git
 Plugin 'airblade/vim-gitgutter'
-
-"Auto Closing Brackets or something like that.
-Plugin 'raimondi/delimitmate'
-
-Plugin 'majutsushi/tagbar'
-Plugin 'scrooloose/nerdtree'
-Plugin 'hari-rangarajan/cctree'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'ludovicchabant/vim-gutentags'
-Plugin 'Valloric/YouCompleteMe'
-" Track the engine.
-Plugin 'SirVer/ultisnips'
-
-" Snippets are separated from the engine. Add this if you want them:
-Plugin 'honza/vim-snippets'
-
-Plugin 'dhruvasagar/vim-table-mode'
-
-"switching between source and header files
-Plugin 'a.vim'
-
-"indent lines
-Plugin 'yggdroot/indentline'
-
-"silver search
-Plugin 'mileszs/ack.vim'
-
-"undo tree
-Plugin 'mbbill/undotree'
 
 "sub mode
 Plugin 'kana/vim-submode'
 
 "to tabularize stuffs if need
 Plugin 'junegunn/vim-easy-align'
+
+"Tags on the fly
+Plugin 'ludovicchabant/vim-gutentags'
+
+" Autocomplete
+Plugin 'Valloric/YouCompleteMe'
 
 " All of your Plugins must be added before the following line
 "
