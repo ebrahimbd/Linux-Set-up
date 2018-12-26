@@ -8,6 +8,8 @@
     lol = log --graph --decorate --pretty=oneline --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cgreen\\ [%cn]" --abbrev-commit --date=short --all
     a = add
 [core]
-	excludesfile = /home/vvdn/.gitignore
+	excludesfile = ~/.gitignore
 [log]
 	decorate = auto
+[help]
+	autoCorrect = -1
