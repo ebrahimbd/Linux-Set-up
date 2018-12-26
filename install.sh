@@ -64,8 +64,8 @@ echo "Resetting .viminfo to remove ownership of root"
 # echo $newvar
 # sudo -u uservar gsettings set org.gnome.desktop.background picture-uri file://$newvar
 
-#echo "Adding the git config"
-#ln -s ~/Linux-Set-up/rc_files/gitconfig ~/.gitconfig
+echo "Adding the git config"
+ln -s ~/Linux-Set-up/rc_files/gitconfig ~/.gitconfig
 
 echo "Installing YCM engine and updating it. "
 cd ~/.vim/bundle/YouCompleteMe
