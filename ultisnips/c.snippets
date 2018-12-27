@@ -1,3 +1,8 @@
 snippet sp "SkyloPrintf"
 Skylo_Printf(SKYLO_$1,"$2\n",$3);
 endsnippet
+
+snippet trace "Skylo_Printf to trace function"
+Skylo_Printf(SKYLO_DEBUG,"In %s function @ line %d\n",__func__,__LINE__);
+endsnippet
+
