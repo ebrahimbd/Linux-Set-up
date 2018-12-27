@@ -11,6 +11,7 @@ then
     echo "git   :       to install the git settings only"
     echo "bash  :       to install the bash settings only"
     echo "conky :       to install the conky settings only"
+    echo "packs :       to install my personal packages"
     echo "all   :       for the complete setup"
     echo "clean :       to remove the complete setup"
     exit 1
@@ -23,12 +24,12 @@ echo "Installation being carried out for user $uservar only"
 
 if [ "$1" == "clean" ];
 then
-    sudp rm -rvf ~/.vim/bundle/Vundle.vim
-    sudo apt remove fonts-powerline exuberant-ctags cscope build-essential cmake python3-dev ack-grep conky-all
+    sudo rm -rvf ~/.vim/bundle/Vundle.vim
+    sudo apt-get -y remove fonts-powerline exuberant-ctags cscope build-essential cmake python3-dev ack-grep conky-all
     sudo rm ~/.vimrc
     sudo rm ~/.ackrc
     sudo rm -rvf ~/.vim 
-    ln -s ~/Linux-Set-up/rc_files/gitconfig ~/.gitconfig
+    sudo rm ~/.gitconfig
     sudo rm ~/.gitconfig
     rm ~/.conkyrc
     rm ~/.conkylogs
@@ -42,14 +43,14 @@ then
 
     #TODO : Need to seperate depencies according to the distro.
     echo "Installing all the dependencies "
-    sudo apt install fonts-powerline exuberant-ctags cscope build-essential cmake python3-dev ack-grep
+    sudo apt-get -y install fonts-powerline exuberant-ctags cscope build-essential cmake python3-dev ack-grep
 
     echo "Replacing the .vimrc files "
     sudo rm ~/.vimrc
     ln -s ~/Linux-Set-up/rc_files/vimrc ~/.vimrc
 
     echo "Installing all the plugins "
-    vim +PluginInstall +qal
+    vim --cmd silent! +PluginInstall +qal
 
     mkdir ~/.vim/undo
     sudo chown $uservar ~/.vim/undo
@@ -102,7 +103,7 @@ fi
 
 if [ "$1" == "conky" ] || [ "$1" == "all" ];
 then
-    sudo apt install conky-all
+    sudo apt -y install conky-all
     echo "Putting in the .conkyrc files"
     rm ~/.conkyrc
     rm ~/.conkylogs
@@ -116,5 +117,9 @@ then
 
     exit 1
 fi
+
+if [ "$1" == "packs" ] || [ "$1" == "all" ];
+then
+    sudo apt-get -y install numlockx 
 
 echo "*************Shreel's set up is complete for $1***************** "
