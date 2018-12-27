@@ -2,7 +2,7 @@
 
 # start the conky delayed.
 conky
-conky -c .conkylogs
+conky -c ~/.conkylogs
 
 #start the docky 
 docky &
