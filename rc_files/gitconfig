@@ -13,4 +13,6 @@
 [help]
 	autoCorrect = -1
 [diff]
-	tool = vimdiff
+	tool = meld
+[merge]
+	tool = meld
