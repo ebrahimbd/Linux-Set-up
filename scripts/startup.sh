@@ -1,15 +1,19 @@
 #!/bin/sh
 
+sleep(60)
+
 # start the conky delayed.
 conky
 conky -c ~/.conkylogs
 
-#start the docky 
-docky &
+# start guake
+guake 
 
 # silently start the synapse
-synapse -s &
+synapse
 
-# start guake
-guake -q &
+#start the docky 
+docky
+
+
 
