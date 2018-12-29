@@ -122,7 +122,7 @@ fi
 
 if [ "$1" == "packs" ] || [ "$1" == "all" ];
 then
-    sudo apt-get -y install numlockx
+    sudo apt-get -y install numlockx docky synapse konsole 
 fi
 
 echo "*************Shreel's set up is complete for $1*****************"
