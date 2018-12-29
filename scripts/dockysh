@@ -1,0 +1,6 @@
+#!/bin/sh
+
+sleep 60
+
+#fire up the docky
+docky
