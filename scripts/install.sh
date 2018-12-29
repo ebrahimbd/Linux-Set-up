@@ -6,7 +6,7 @@ then
     echo "Options           Description"
     echo "help  :       to see this print"
     echo "vim   :       to install the vim settings only"
-    echo "update:       to update the installed plugin" 
+    echo "update:       to update the installed plugin"
     echo "ycm   :       to install clang completer for ycm"
     echo "git   :       to install the git settings only"
     echo "bash  :       to install the bash settings only"
@@ -25,14 +25,16 @@ echo "Installation being carried out for user $uservar only"
 if [ "$1" == "clean" ];
 then
     sudo rm -rvf ~/.vim/bundle/Vundle.vim
-    sudo apt-get -y remove fonts-powerline exuberant-ctags cscope build-essential cmake python3-dev ack-grep conky-all
     sudo rm ~/.vimrc
     sudo rm ~/.ackrc
-    sudo rm -rvf ~/.vim 
+    sudo rm -rvf ~/.vim
     sudo rm ~/.gitconfig
     sudo rm ~/.gitconfig
     rm ~/.conkyrc
     rm ~/.conkylogs
+    sudo apt-get -y remove fonts-powerline exuberant-ctags cscope build-essential cmake python3-dev ack-grep conky-all
+    sudo apt-get -y autoremove
+    sudo apt-get -y autoclean
 fi
 
 if [ "$1" == "vim" ] || [ "$1" == "all" ];
@@ -120,6 +122,8 @@ fi
 
 if [ "$1" == "packs" ] || [ "$1" == "all" ];
 then
-    sudo apt-get -y install numlockx 
+    sudo apt-get -y install numlockx
+fi
 
-echo "*************Shreel's set up is complete for $1***************** "
+echo "*************Shreel's set up is complete for $1*****************"
+
