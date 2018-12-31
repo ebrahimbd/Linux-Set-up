@@ -29,7 +29,7 @@ then
     sudo rm ~/.ackrc
     sudo rm -rvf ~/.vim
     sudo rm ~/.gitconfig
-    sudo rm ~/.gitconfig
+    sudo rm ~/.bashrc
     rm ~/.conkyrc
     rm ~/.conkylogs
     sudo apt-get -y remove fonts-powerline exuberant-ctags cscope build-essential cmake python3-dev ack-grep conky-all
@@ -103,6 +103,13 @@ then
     echo "Adding the git config"
     sudo rm ~/.gitconfig
     ln -s ~/Linux-Set-up/rc_files/gitconfig ~/.gitconfig
+fi
+
+if [ "$1" == "bash" ] || [ "$1" == "all" ];
+then
+    echo "Adding the bash config"
+    sudo rm ~/.bashrc
+    ln -s ~/Linux-Set-up/rc_files/bashrc ~/.bashrc
 fi
 
 if [ "$1" == "conky" ] || [ "$1" == "all" ];
