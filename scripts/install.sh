@@ -24,7 +24,7 @@ echo "Installation being carried out for user $uservar only"
 
 if [ "$1" == "clean" ];
 then
-    sudo rm -rvf ~/.vim/bundle/Vundle.vim
+    sudo rm -rvf ~/.vim/bundle  
     sudo rm ~/.vimrc
     sudo rm ~/.ackrc
     sudo rm -rvf ~/.vim
@@ -42,6 +42,8 @@ then
     # Vim set up
     echo "Installing Vundle "
     git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+    sudo chown $uservar ~/.vim
+    sudo chown $uservar ~/.vim/bundle
 
     #TODO : Need to seperate depencies according to the distro.
     echo "Installing all the dependencies "
