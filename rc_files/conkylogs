@@ -40,6 +40,6 @@ conky.config = {
 
 conky.text = [[
 ${color grey}$hr
-${color lime}${tail /var/log/syslog 15 2}
+${color lime}${tail /var/log/syslog 25 1}
 ${color grey}$hr
 ]]
