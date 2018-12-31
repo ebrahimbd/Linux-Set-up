@@ -14,12 +14,10 @@ then
     echo "packs :       to install my personal packages"
     echo "all   :       for the complete setup"
     echo "clean :       to remove the complete setup"
-    exit 1
 fi
 
 uservar=$(whoami)
 
-echo "*************Going to install the Shreel's set up for $1***************** "
 echo "Installation being carried out for user $uservar only"
 
 if [ "$1" == "clean" ];
@@ -37,7 +35,7 @@ then
     sudo apt-get -y autoclean
 fi
 
-if [ "$1" == "vim" ] || [ "$1" == "all" ];
+if [ "$1" == "vim" ] || [ "$1" == "all" ] || [ $# -ne 1 ];
 then
     # Vim set up
     echo "Installing Vundle "
@@ -134,5 +132,5 @@ then
     sudo apt-get -y install numlockx docky synapse konsole 
 fi
 
-echo "*************Shreel's set up is complete for $1*****************"
+echo "*************Linux Set Up is complete for $uservar.Have fun :)*****************"
 
