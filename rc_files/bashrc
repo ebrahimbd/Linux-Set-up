@@ -165,5 +165,10 @@ function gsv() {
     gsl
 }
 
+function gcf(){
+    #git commit the file
+    git commit -i "$1" -m "$2"
+}
+
 alias
 
