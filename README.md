@@ -1,7 +1,8 @@
 # Complete Linux Set-Up
 
 **WARNING : IF YOU ARE NOT ME, FORK THIS REPO AND REMOVE ALL THE STUFF YOU DON'T NEED,**
-**I AM NOT TO BE BLAMED IF ANYTHING BREAKS**
+**I AM NOT TO BE BLAMED IF ANYTHING BREAKS*. If something doesn't work,
+You can surely ping me @shreel.chhatbar@gmail.com*
 
 The current complete set up currently consist of following files
 
@@ -85,7 +86,7 @@ Open Tagbar. To close type :TagbarClose
 
 `nnoremap <leader>g :GitGutterLineHighlightsToggle<CR?`
 
-Show/Hide gitgutter lines highlight 
+Show/Hide gitgutter lines highlight
 
 `nnoremap <leader>gp :GitGutterPrevHunk<CR?`
 
@@ -142,7 +143,7 @@ CCTree Forward trace
 - highlight search
 - no swap file (those irritating files)
 - persistant undo
-- syntax on 
+- syntax on
 
 ## ackrc file
 
