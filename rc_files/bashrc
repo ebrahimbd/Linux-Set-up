@@ -8,6 +8,9 @@ case $- in
     *) return;;
 esac
 
+#expand aliases
+shopt -s expand_aliases
+
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
@@ -133,12 +136,33 @@ function countdown(){
      sleep 0.1
    done
 }
+
 function stopwatch(){
   date1=`date +%s`; 
    while true; do 
     echo -ne "$(date -u --date @$((`date +%s` - $date1)) +%H:%M:%S)\r"; 
     sleep 0.1
    done
+}
+
+alias gsl="git stash list"
+
+function gsa() {
+    #Applying a stash provided arguement number 
+    git stash apply stash@{"$1"}
+    gsl
+}
+
+function gsd() {
+    #Dropping a stash provided arguement number 
+    git stash drop stash@{"$1"}
+    gsl
+}
+
+function gsv() {
+    #Dropping a stash provided arguement number 
+    git stash save "$1"
+    gsl
 }
 
 alias
