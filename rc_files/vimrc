@@ -16,68 +16,28 @@ call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
 
-" let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-
-"silver search
 Plugin 'mileszs/ack.vim'
-
-"switching between source and header files
 Plugin 'a.vim'
-
-"Check where the function jumps
 Plugin 'hari-rangarajan/cctree'
-
-"Auto Closing Brackets or something like that.
 Plugin 'raimondi/delimitmate'
-
-"indent lines
 Plugin 'yggdroot/indentline'
-
-" Directory tree within the vim
-Plugin 'scrooloose/nerdtree'
-
-"Sexy commenting
 Plugin 'scrooloose/nerdcommenter'
-
-" Your best friend
 Plugin 'majutsushi/tagbar'
-
-"undo tree
+Plugin 'godlygeek/tabular'
 Plugin 'mbbill/undotree'
 
-" Track the engine.
 Plugin 'SirVer/ultisnips'
-
-" Airline and it's themes
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-
-" Snippets are separated from the engine. Add this if you want them:
 Plugin 'honza/vim-snippets'
 
-"Awesome for creating tables
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'dhruvasagar/vim-table-mode'
-
-"Some thing to do with the git...
 Plugin 'tpope/vim-fugitive'
-
-"Colorschemes.
-Plugin 'flazz/vim-colorschemes'
-
-"Something to do with the git
 Plugin 'airblade/vim-gitgutter'
-
-"sub mode
+Plugin 'flazz/vim-colorschemes'
 Plugin 'kana/vim-submode'
-
-"to tabularize stuffs if need
-Plugin 'junegunn/vim-easy-align'
-
-"Tags on the fly
 Plugin 'ludovicchabant/vim-gutentags'
-
-" Autocomplete
 Plugin 'Valloric/YouCompleteMe'
 
 " All of your Plugins must be added before the following line
@@ -96,27 +56,26 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
-"Remove all trailing whitespace by pressing F5
-nnoremap <leader>n :NERDTreeToggle<CR>
-nnoremap <F3>      :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
-nnoremap <leader>t :TagbarOpen fj<CR>
-nnoremap <leader>g :GitGutterLineHighlightsToggle<CR>
-nnoremap <leader>gp :GitGutterPrevHunk<CR>
-nnoremap <leader>gn :GitGutterNextHunk<CR>
-nnoremap <leader>gt :GitGutterSignsToggle<CR>
-nnoremap <leader>a :bp<CR>
-nnoremap <leader>d :bn<CR>
-nnoremap <leader>x :bd<CR>
-nnoremap <leader>i :IndentLinesToggle<CR>
-nnoremap <leader>h :A<CR>
-" :nmap <leader>w :s/\(<c-r>=expand("<cword>")<cr>\)/
-nnoremap <leader>f :Ack<space>
-nnoremap <leader>fs :Ack<space><c-r>=expand("<cword>")<cr><CR>
-nnoremap <leader>cr :CCTreeTraceReverse<CR>
-nnoremap <leader>cf :CCTreeTraceForward<CR>
-nnoremap <leader>nu :set invnumber<CR>
-" nnoremap <leader>p :set pt<CR>
-nnoremap <leader>u :UndotreeToggle<cr>
+"Remove all trailing whitespace by pressing F3
+nnoremap <F3>        : let _s=@/<Bar>                            : %s/\s\+$//e<Bar>                   : let @/=_s<Bar><CR>
+nnoremap <leader>t   : TagbarOpen fj<CR>
+nnoremap <leader>g   : GitGutterLineHighlightsToggle<CR>
+nnoremap <leader>gp  : GitGutterPrevHunk<CR>
+nnoremap <leader>gn  : GitGutterNextHunk<CR>
+nnoremap <leader>gt  : GitGutterSignsToggle<CR>
+nnoremap <leader>a   : bp<CR>
+nnoremap <leader>d   : bn<CR>
+nnoremap <leader>x   : bd<CR>
+nnoremap <leader>i   : IndentLinesToggle<CR>
+nnoremap <leader>h   : A<CR>
+"                    : nmap <leader>w                            : s/\(<c-r>=expand("<cword>")<cr>\)/
+nnoremap <leader>f   : Ack<space>
+nnoremap <leader>fs  : Ack<space><c-r>=expand("<cword>")<cr><CR>
+nnoremap <leader>cr  : CCTreeTraceReverse<CR>
+nnoremap <leader>cf  : CCTreeTraceForward<CR>
+nnoremap <leader>n   : set invnumber<CR>
+" nnoremap <leader>p : set pt<CR>
+nnoremap <leader>u   : UndotreeToggle<cr>
 
 set t_Co=256
 set incsearch
