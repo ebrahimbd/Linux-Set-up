@@ -170,5 +170,7 @@ function gcf(){
     git commit -i "$1" -m "$2"
 }
 
+alias setup="cd ~/Linux-Set-up"
+
 alias
 
