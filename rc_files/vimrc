@@ -70,6 +70,7 @@ nnoremap <leader>d   :bn<CR>
 nnoremap <leader>x   :bd<CR>
 nnoremap <leader>i   :IndentLinesToggle<CR>
 nnoremap <leader>h   :A<CR>
+map <c-d> :Dox<CR>
 "                    :nmap <leader>w                            : s/\(<c-r>=expand("<cword>")<cr>\)/
 nnoremap <leader>f   :Ack<space>
 nnoremap <leader>fs  :Ack<space><c-r>=expand("<cword>")<cr><CR>
