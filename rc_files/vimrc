@@ -21,6 +21,7 @@ Plugin 'mileszs/ack.vim'
 Plugin 'a.vim'
 Plugin 'hari-rangarajan/cctree'
 Plugin 'raimondi/delimitmate'
+Plugin 'vim-scripts/DoxygenToolkit.vim'
 Plugin 'yggdroot/indentline'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'majutsushi/tagbar'
@@ -234,4 +235,5 @@ call submode#map('WindowsMode', 'n', '', 'w', '<C-w><C-w>')
 
 let g:submode_keep_leaving_key = 0
 let g:submode_timeout = 0
+let g:DoxygenToolkit_compactDoc = "yes"
 
