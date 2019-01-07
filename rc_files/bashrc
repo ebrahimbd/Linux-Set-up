@@ -130,17 +130,17 @@ if [ -f ~/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.s
 fi
 
 function countdown(){
-   date1=$((`date +%s` + $1)); 
-   while [ "$date1" -ge `date +%s` ]; do 
+   date1=$((`date +%s` + $1));
+   while [ "$date1" -ge `date +%s` ]; do
      echo -ne "$(date -u --date @$(($date1 - `date +%s`)) +%H:%M:%S)\r";
      sleep 0.1
    done
 }
 
 function stopwatch(){
-  date1=`date +%s`; 
-   while true; do 
-    echo -ne "$(date -u --date @$((`date +%s` - $date1)) +%H:%M:%S)\r"; 
+  date1=`date +%s`;
+   while true; do
+    echo -ne "$(date -u --date @$((`date +%s` - $date1)) +%H:%M:%S)\r";
     sleep 0.1
    done
 }
@@ -148,19 +148,19 @@ function stopwatch(){
 alias gsl="git stash list"
 
 function gsa() {
-    #Applying a stash provided arguement number 
+    #Applying a stash provided arguement number
     git stash apply stash@{"$1"}
     gsl
 }
 
 function gsd() {
-    #Dropping a stash provided arguement number 
+    #Dropping a stash provided arguement number
     git stash drop stash@{"$1"}
     gsl
 }
 
 function gsv() {
-    #Dropping a stash provided arguement number 
+    #Dropping a stash provided arguement number
     git stash save "$1"
     gsl
 }
@@ -168,6 +168,12 @@ function gsv() {
 function gcf(){
     #git commit the file
     git commit -i "$1" -m "$2"
+}
+
+function gcfp(){
+    #git commit the file
+    git commit -i "$1" -m "$2"
+    git push
 }
 
 alias setup="cd ~/Linux-Set-up"
