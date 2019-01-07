@@ -1,5 +1,4 @@
 set nocompatible              " be iMproved, required
-filetype off                  " required
 set laststatus=2
 
 " Customizing the Airline
@@ -21,6 +20,7 @@ Plugin 'mileszs/ack.vim'
 Plugin 'a.vim'
 Plugin 'hari-rangarajan/cctree'
 Plugin 'raimondi/delimitmate'
+Plugin 'vim-scripts/DoxygenToolkit.vim'
 Plugin 'yggdroot/indentline'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'majutsushi/tagbar'
@@ -58,25 +58,26 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 
 "Remove all trailing whitespace by pressing F3
-nnoremap <F3>        : let _s=@/<Bar>                            : %s/\s\+$//e<Bar>                   : let @/=_s<Bar><CR>
-nnoremap <leader>t   : TagbarOpen fj<CR>
-nnoremap <leader>g   : GitGutterLineHighlightsToggle<CR>
-nnoremap <leader>gp  : GitGutterPrevHunk<CR>
-nnoremap <leader>gn  : GitGutterNextHunk<CR>
-nnoremap <leader>gt  : GitGutterSignsToggle<CR>
-nnoremap <leader>a   : bp<CR>
-nnoremap <leader>d   : bn<CR>
-nnoremap <leader>x   : bd<CR>
-nnoremap <leader>i   : IndentLinesToggle<CR>
-nnoremap <leader>h   : A<CR>
-"                    : nmap <leader>w                            : s/\(<c-r>=expand("<cword>")<cr>\)/
-nnoremap <leader>f   : Ack<space>
-nnoremap <leader>fs  : Ack<space><c-r>=expand("<cword>")<cr><CR>
-nnoremap <leader>cr  : CCTreeTraceReverse<CR>
-nnoremap <leader>cf  : CCTreeTraceForward<CR>
-nnoremap <leader>n   : set invnumber<CR>
-" nnoremap <leader>p : set pt<CR>
-nnoremap <leader>u   : UndotreeToggle<cr>
+nnoremap <F3>        :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
+nnoremap <leader>t   :TagbarOpen fj<CR>
+nnoremap <leader>g   :GitGutterLineHighlightsToggle<CR>
+nnoremap <leader>gp  :GitGutterPrevHunk<CR>
+nnoremap <leader>gn  :GitGutterNextHunk<CR>
+nnoremap <leader>gt  :GitGutterSignsToggle<CR>
+nnoremap <leader>a   :bp<CR>
+nnoremap <leader>d   :bn<CR>
+nnoremap <leader>x   :bd<CR>
+nnoremap <leader>i   :IndentLinesToggle<CR>
+nnoremap <leader>h   :A<CR>
+map <c-d> :Dox<CR>
+"                    :nmap <leader>w                            : s/\(<c-r>=expand("<cword>")<cr>\)/
+nnoremap <leader>f   :Ack<space>
+nnoremap <leader>fs  :Ack<space><c-r>=expand("<cword>")<cr><CR>
+nnoremap <leader>cr  :CCTreeTraceReverse<CR>
+nnoremap <leader>cf  :CCTreeTraceForward<CR>
+nnoremap <leader>n   :set invnumber<CR>
+" nnoremap <leader>p :set pt<CR>
+nnoremap <leader>u   :UndotreeToggle<cr>
 
 set t_Co=256
 set incsearch
@@ -116,6 +117,15 @@ if has("autocmd")
     au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
                 \| exe "normal! g'\"" | endif
 endif
+
+"Indent every file before saving
+autocmd BufWritePre *.c :normal gg=G``
+
+"Remove whitespace before saving
+autocmd BufWritePre * :%s/\s\+$//e
+
+"Open Tagbar by default for only C files
+autocmd Filetype c :TagbarOpen
 
 "To clear the white space and indent the files after writing,
 "TODO :
@@ -163,6 +173,7 @@ let g:CCTreeMinVisibleDepth = 3
 "gutentags
 let g:gutentags_modules = ['ctags']
 let g:gutentags_ctags_extra_args = ['--fields=+l']
+let g:gutentags_project_root = ['.project']
 
 " make YCM compatible with UltiSnips (using supertab)
 let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
@@ -196,3 +207,37 @@ let g:ack_use_cword_for_empty_search = 0
 
 "space between comment and stuff like that
 let NERDSpaceDelims=1
+
+" Create a submode to handle windows
+" The submode is entered whith <Leader>w and exited with <Leader>
+call submode#enter_with('WindowsMode', 'n', '', '<Leader>w', ':echo "windows mode"<CR>')
+call submode#leave_with('WindowsMode', 'n', '', '<Esc>')
+
+" Change of windows with hjkl
+call submode#map('WindowsMode', 'n', '', 'j', '<C-w>j')
+call submode#map('WindowsMode', 'n', '', 'k', '<C-w>k')
+call submode#map('WindowsMode', 'n', '', 'h', '<C-w>h')
+call submode#map('WindowsMode', 'n', '', 'l', '<C-w>l')
+
+" Resize windows with <C-yuio> (interesting on azerty keyboards)
+call submode#map('WindowsMode', 'n', '', '-', '<C-w>-')
+call submode#map('WindowsMode', 'n', '', '+', '<C-w>+')
+call submode#map('WindowsMode', 'n', '', '<', '<C-w><')
+call submode#map('WindowsMode', 'n', '', '>', '<C-w>>')
+
+call submode#map('WindowsMode', 'n', '', 'w', '<C-w><C-w>')
+" Move windows with <C-hjkl>
+" call submode#map('WindowsMode', 'n', '', '<C-j>', '<C-w>J')
+" call submode#map('WindowsMode', 'n', '', '<C-k>', '<C-w>K')
+" call submode#map('WindowsMode', 'n', '', '<C-h>', '<C-w>H')
+" call submode#map('WindowsMode', 'n', '', '<C-l>', '<C-w>L')
+" close a window with c
+" call submode#map('WindowsMode', 'n', '', 'c', '<C-w>c')
+" split windows with / and !
+" call submode#map('WindowsMode', 'n', '', '/', '<C-w>s')
+" call submode#map('WindowsMode', 'n', '', '!', '<C-w>v')
+
+let g:submode_keep_leaving_key = 0
+let g:submode_timeout = 0
+let g:DoxygenToolkit_compactDoc = "yes"
+
