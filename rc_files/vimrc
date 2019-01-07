@@ -124,6 +124,9 @@ autocmd BufWritePre *.c :normal gg=G``
 "Remove whitespace before saving
 autocmd BufWritePre * :%s/\s\+$//e
 
+"Open Tagbar by default for only C files
+autocmd Filetype c :TagbarOpen
+
 "To clear the white space and indent the files after writing,
 "TODO :
 " air-line
@@ -170,6 +173,7 @@ let g:CCTreeMinVisibleDepth = 3
 "gutentags
 let g:gutentags_modules = ['ctags']
 let g:gutentags_ctags_extra_args = ['--fields=+l']
+let g:gutentags_project_root = ['.project']
 
 " make YCM compatible with UltiSnips (using supertab)
 let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
