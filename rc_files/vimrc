@@ -119,11 +119,11 @@ if has("autocmd")
                 \| exe "normal! g'\"" | endif
 endif
 
-"Indent every file before saving 
-autocmd BufWritePre * :normal gg=G``
+"Indent every file before saving
+autocmd BufWritePre *.c :normal gg=G``
 
 "Remove whitespace before saving
-" autocmd BufWritePre * :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
+autocmd BufWritePre * :%s/\s\+$//e
 
 "To clear the white space and indent the files after writing,
 "TODO :
