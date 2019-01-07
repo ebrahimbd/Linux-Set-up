@@ -22,7 +22,7 @@ echo "Installation being carried out for user $uservar only"
 
 if [ "$1" == "clean" ];
 then
-    sudo rm -rvf ~/.vim/bundle  
+    sudo rm -rvf ~/.vim/bundle
     sudo rm ~/.vimrc
     sudo rm ~/.ackrc
     sudo rm -rvf ~/.vim
@@ -118,18 +118,21 @@ then
     rm ~/.conkylogs
     ln -s ~/Linux-Set-up/rc_files/conkyrc ~/.conkyrc
     ln -s ~/Linux-Set-up/rc_files/conkylogs ~/.conkylogs
+fi
 
-    # newvar=/home/uservar/Linux-Set-up/wallpaper/linux_sudo.png
-    # echo "Setting the wallpaper"
-    # echo $newvar
-    # sudo -u uservar gsettings set org.gnome.desktop.background picture-uri file://$newvar
+if [ "$1" == "wall" ] || [ "$1" == "all" ];
+then
+    newvar=/home/$USER/Linux-Set-up/wallpaper/thelan_1920.jpg
+    echo "Setting the wallpaper"
+    echo $newvar
+    gsettings set org.gnome.desktop.background picture-uri file://$newvar
 
     exit 1
 fi
 
 if [ "$1" == "packs" ] || [ "$1" == "all" ];
 then
-    sudo apt-get -y install numlockx docky synapse konsole 
+    sudo apt-get -y install numlockx docky synapse konsole
 fi
 
 echo "*************Linux Set Up is complete for $uservar.Have fun :)*****************"
