@@ -1,14 +1,6 @@
 set nocompatible              " be iMproved, required
 set laststatus=2
 
-" Customizing the Airline
-" function! AirlineInit()
-" let g:airline_section_b = airline#section#create(['branch'])
-" let g:airline_section_x = airline#section#create(['hunks'])
-" let g:airline_section_y = '%y'
-" endfunction
-" autocmd User AirlineAfterInit call AirlineInit()
-
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -29,7 +21,6 @@ Plugin 'godlygeek/tabular'
 Plugin 'mbbill/undotree'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
-
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'dhruvasagar/vim-table-mode'
@@ -70,15 +61,14 @@ nnoremap <leader>d   :bn<CR>
 nnoremap <leader>x   :bd<CR>
 nnoremap <leader>i   :IndentLinesToggle<CR>
 nnoremap <leader>h   :A<CR>
-map <c-d> :Dox<CR>
-"                    :nmap <leader>w                            : s/\(<c-r>=expand("<cword>")<cr>\)/
+map <c-d>            :Dox<CR>
 nnoremap <leader>f   :Ack<space>
 nnoremap <leader>fs  :Ack<space><c-r>=expand("<cword>")<cr><CR>
 nnoremap <leader>cr  :CCTreeTraceReverse<CR>
 nnoremap <leader>cf  :CCTreeTraceForward<CR>
 nnoremap <leader>n   :set invnumber<CR>
-" nnoremap <leader>p :set pt<CR>
 nnoremap <leader>u   :UndotreeToggle<cr>
+nnoremap <silent> <Esc><Esc> <Esc>:nohlsearch<CR><Esc>
 
 set t_Co=256
 set incsearch
@@ -97,7 +87,13 @@ set undodir=$HOME/.vim/undo " where to save undo histories
 set undolevels=1000         " How many undos
 set undoreload=10000        " number of lines to save for undo
 set updatetime=10000
-set textwidth=119
+set textwidth=118
+
+"folding settings
+set foldmethod=indent   "fold based on indent
+set foldnestmax=10      "deepest fold is 10 levels
+set nofoldenable        "dont fold by default
+set foldlevel=1         "this is just what i use
 
 "if you want to highlight the whole line
 "To highlight lines longer than 120 characters.
@@ -119,6 +115,10 @@ if has("autocmd")
     au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
                 \| exe "normal! g'\"" | endif
 endif
+
+"Indent autowrap long lines before saving
+autocmd BufWritePre *.c :g/./ normal gqq
+autocmd BufWritePre *.txt :g/./ normal gqq
 
 "Indent every file before saving
 autocmd BufWritePre *.c :normal gg=G``zz
@@ -172,9 +172,12 @@ let g:CCTreeCscopeDb = "cscope.out"
 let g:CCTreeRecursiveDepth = 3
 let g:CCTreeMinVisibleDepth = 3
 
+"tagbar
+let g:tagbar_compact = 1
+
 "gutentags
 let g:gutentags_modules = ['ctags']
-let g:gutentags_ctags_extra_args = ['--fields=+l']
+let g:gutentags_ctags_extra_args = ['--fields=+l --extra=+f --langdef=file']
 let g:gutentags_project_root = ['.project']
 
 " make YCM compatible with UltiSnips (using supertab)
@@ -243,12 +246,6 @@ let g:submode_keep_leaving_key = 0
 let g:submode_timeout = 0
 
 let g:DoxygenToolkit_compactDoc = "yes"
-
-"folding settings
-set foldmethod=indent   "fold based on indent
-set foldnestmax=10      "deepest fold is 10 levels
-set nofoldenable        "dont fold by default
-set foldlevel=1         "this is just what i use
 
 let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
 if executable('ag')
