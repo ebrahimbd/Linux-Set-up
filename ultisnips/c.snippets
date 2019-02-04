@@ -1,8 +1,163 @@
 snippet sp "SkyloPrintf"
-Skylo_Printf(SKYLO_$1,"$2\n",$3);
+Skylo_Printf(SKYLO_$1,"$2\n"$3);
 endsnippet
 
 snippet trace "Skylo_Printf to trace function"
 Skylo_Printf(SKYLO_DEBUG,"In %s function @ line %d\n",__func__,__LINE__);
 endsnippet
 
+snippet qclitrace "QCLI_Printf to trace function"
+QCLI_Printf("In %s function @ line %d\n",__func__,__LINE__);
+endsnippet
+
+snippet fattrace "Skylo_Printf to trace fat function"
+FF_PRINTF("In %s function @ line %d\n",__func__,__LINE__);
+endsnippet
+
+snippet fatfuncstart "Skylo_Printf to trace fat function"
+FF_PRINTF("******START of %s function******\n",__func__);
+endsnippet
+
+snippet fatfuncend "Skylo_Printf to trace fat function"
+FF_PRINTF("******END of %s function******\n",__func__);
+endsnippet
+
+snippet if "If according to Coding Guidelines"
+if ( $1 )
+endsnippet
+
+snippet for "For according to Coding Guidelines"
+for ( $1, $2, $3 )
+endsnippet
+
+snippet while "while according to Coding Guidelines"
+while ( $1 )
+endsnippet
+
+snippet do "Do according to Coding Guidelines"
+do {
+$1
+} while ( $2 )
+endsnippet
+
+snippet fb "For according to Coding Guidelines"
+/**
+ * @function        : $1
+ * @brief           : $1
+ * @param[${3:in}]       : $4
+ * @return          : ${5:Status}
+ * @retval          : ${6:QAPI_OK} on success
+ * @retval          : ${7:QAPI_ERROR} on failure
+ */
+endsnippet
+
+snippet f2b "For according to Coding Guidelines"
+/**
+ * @function        : $1
+ * @brief           : $1
+ * @param[${3:in}]       : $4
+ * @param[${5:in}]       : $6
+ * @return          : ${7:Status}
+ * @retval          : ${8:QAPI_OK} on success
+ * @retval          : ${9:QAPI_ERROR} on failure
+ */
+endsnippet
+
+snippet f3b "For according to Coding Guidelines"
+/**
+ * @function        : $1
+ * @brief           : $1
+ * @param[${3:in}]       : $4
+ * @param[${5:in}]       : $6
+ * @param[${7:in}]       : $8
+ * @return          : ${9:Status}
+ * @retval          : ${10:QAPI_OK} on success
+ * @retval          : ${11:QAPI_ERROR} on failure
+ */
+endsnippet
+
+snippet f4b "For according to Coding Guidelines"
+/**
+ * @function        : $1
+ * @brief           : $1
+ * @param[${3:in}]       : $4
+ * @param[${5:in}]       : $6
+ * @param[${7:in}]       : $8
+ * @param[${9:in}]       : $10
+ * @return          : ${11:Status}
+ * @retval          : ${12:QAPI_OK} on success
+ * @retval          : ${13:QAPI_ERROR} on failure
+ */
+endsnippet
+
+snippet cfb "For according to Coding Guidelines"
+/**
+ * @function        : $1
+ * @brief           : $1
+ * @param[in]       : ${3:Parameter Count}
+ * @param[in]       : ${4:Parameter List}
+ * @return          : ${5:Status}
+ * @retval          : ${6:QAPI_OK on success}
+ * @retval          : ${7:QAPI_ERROR on failure}
+ */
+endsnippet
+
+snippet funcdef "Function Defination"
+/*-------------------------------------------------------------------------
+ * Function Definitions
+ *-----------------------------------------------------------------------*/
+endsnippet
+
+snippet funcdec "Function Declaration"
+/*-------------------------------------------------------------------------
+ * Function Declarations
+ *-----------------------------------------------------------------------*/
+endsnippet
+
+snippet typedec "Type Declaration"
+/*-------------------------------------------------------------------------
+ * Type Declarations
+ *-----------------------------------------------------------------------*/
+endsnippet
+
+snippet globdec "Global and static declaration"
+/*-------------------------------------------------------------------------
+ * Static & global Variable Declarations
+ *-----------------------------------------------------------------------*/
+endsnippet
+
+snippet prepdec "Preprocessor declarations"
+/*-------------------------------------------------------------------------
+ * Preprocessor Definitions and Constants
+ *-----------------------------------------------------------------------*/
+endsnippet
+
+snippet incfiles "Include Files"
+/*-------------------------------------------------------------------------
+ * Include Files
+ *-----------------------------------------------------------------------*/
+endsnippet
+
+snippet fileguards "File Guards"
+#ifndef __$1_H__
+#define __$1_H__
+
+$2
+
+#endif
+endsnippet
+
+snippet filebanner "Licence Info and stuff"
+/**
+ * @file     : `!v expand('%:t')`
+ * @brief    : $2
+ * @author   : Shreel Chhatbar (shreel.chhatbar@vvdntech.in)
+ * @copyright: TODO
+ */
+endsnippet
+
+snippet if "if ... then (if)"
+if ${2:[[ ${1:condition} ]]}; then
+    ${0:#statements}
+fi
+endsnippet

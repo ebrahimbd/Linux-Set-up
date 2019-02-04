@@ -69,6 +69,7 @@ nnoremap <leader>cf  :CCTreeTraceForward<CR>
 nnoremap <leader>n   :set invnumber<CR>
 nnoremap <leader>u   :UndotreeToggle<cr>
 nnoremap <silent> <Esc><Esc> <Esc>:nohlsearch<CR><Esc>
+nnoremap <leader>c   :IndentLinesToggle<CR>:set invnumber<CR>:GitGutterSignsToggle<CR>
 
 set t_Co=256
 set incsearch
@@ -80,13 +81,13 @@ set wildmenu
 set bs=2
 syntax on
 set nu
-set softtabstop=4 shiftwidth=4 expandtab
+set tabstop=4 shiftwidth=4 expandtab
 colo heroku-terminal
 set undofile                " Save undos after file closes
 set undodir=$HOME/.vim/undo " where to save undo histories
 set undolevels=1000         " How many undos
 set undoreload=10000        " number of lines to save for undo
-set updatetime=10000
+set updatetime=5000
 set textwidth=118
 
 "folding settings
@@ -116,18 +117,23 @@ if has("autocmd")
                 \| exe "normal! g'\"" | endif
 endif
 
-"Indent autowrap long lines before saving
-autocmd BufWritePre *.c :g/./ normal gqq
-autocmd BufWritePre *.txt :g/./ normal gqq
-
 "Indent every file before saving
-autocmd BufWritePre *.c :normal gg=G``zz
+autocmd BufWritePre *.h :normal gg=G``
+autocmd BufWritePre *.c :normal gg=G``
 
 "Remove whitespace before saving
 autocmd BufWritePre * :%s/\s\+$//e
 
 "Open Tagbar by default for only C files
 autocmd Filetype c :TagbarOpen
+
+autocmd Filetype c :UltiSnipsAddFiletypes c.cpp
+autocmd Filetype c :UltiSnipsAddFiletypes cpp.c
+
+"Indent autowrap long lines before saving
+"exe ':g/./normal gqq' | normal ``zz
+" autocmd BufWritePre *.c :exe ':g/./normal gqq' | normal ``zz
+" autocmd BufWritePre *.txt :g/./ normal gqq
 
 "To clear the white space and indent the files after writing,
 "TODO :
@@ -179,6 +185,7 @@ let g:tagbar_compact = 1
 let g:gutentags_modules = ['ctags']
 let g:gutentags_ctags_extra_args = ['--fields=+l --extra=+f --langdef=file']
 let g:gutentags_project_root = ['.project']
+let g:ctrlp_root_markers = ['.project']
 
 " make YCM compatible with UltiSnips (using supertab)
 let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
@@ -212,6 +219,9 @@ let g:ack_use_cword_for_empty_search = 0
 
 "space between comment and stuff like that
 let NERDSpaceDelims=1
+let NERDDefaultAlign='left'
+let g:NERDAltDelims_c = 1
+let g:NERDAltDelims_cpp = 1
 
 " Create a submode to handle windows
 " The submode is entered whith <Leader>w and exited with <Leader>
@@ -231,16 +241,6 @@ call submode#map('WindowsMode', 'n', '', '<', '<C-w><')
 call submode#map('WindowsMode', 'n', '', '>', '<C-w>>')
 
 call submode#map('WindowsMode', 'n', '', 'w', '<C-w><C-w>')
-" Move windows with <C-hjkl>
-" call submode#map('WindowsMode', 'n', '', '<C-j>', '<C-w>J')
-" call submode#map('WindowsMode', 'n', '', '<C-k>', '<C-w>K')
-" call submode#map('WindowsMode', 'n', '', '<C-h>', '<C-w>H')
-" call submode#map('WindowsMode', 'n', '', '<C-l>', '<C-w>L')
-" close a window with c
-" call submode#map('WindowsMode', 'n', '', 'c', '<C-w>c')
-" split windows with / and !
-" call submode#map('WindowsMode', 'n', '', '/', '<C-w>s')
-" call submode#map('WindowsMode', 'n', '', '!', '<C-w>v')
 
 let g:submode_keep_leaving_key = 0
 let g:submode_timeout = 0
@@ -251,3 +251,5 @@ let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
 if executable('ag')
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 endif
+let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_regexp = 1
