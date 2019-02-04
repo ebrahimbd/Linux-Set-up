@@ -63,8 +63,10 @@ then
 
     echo "Copying Ultisnips"
     sudo rm ~/.vim/my-snippets/c.snippets
+    sudo rm ~/.vim/my-snippets/cpp.snippets
     mkdir ~/.vim/my-snippets
     ln -s ~/Linux-Set-up/ultisnips/c.snippets ~/.vim/my-snippets/c.snippets
+    ln -s ~/Linux-Set-up/ultisnips/cpp.snippets ~/.vim/my-snippets/cpp.snippets
 
     echo "Installing the C syntax file "
     sudo rm ~/.vim/after/syntax/c.vim
