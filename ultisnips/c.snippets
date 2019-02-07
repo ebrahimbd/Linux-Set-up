@@ -1,5 +1,5 @@
 snippet sp "SkyloPrintf"
-Skylo_Printf(SKYLO_$1,"$2\n"$3);
+Skylo_Printf(SKYLO_${1:DEBUG},"$2\n"$3);
 endsnippet
 
 snippet trace "Skylo_Printf to trace function"
@@ -42,63 +42,63 @@ endsnippet
 
 snippet fb "For according to Coding Guidelines"
 /**
- * @function        : $1
- * @brief           : $1
- * @param[${3:in}]       : $4
- * @return          : ${5:Status}
- * @retval          : ${6:QAPI_OK} on success
- * @retval          : ${7:QAPI_ERROR} on failure
+ * @function : $1
+ * @brief    : $1
+ * @param[${3:in}] : $4
+ * @return  : ${5:Status}
+ * @retval  : ${6:QAPI_OK} on success
+ * @retval  : ${7:QAPI_ERROR} on failure
  */
 endsnippet
 
 snippet f2b "For according to Coding Guidelines"
 /**
- * @function        : $1
- * @brief           : $1
- * @param[${3:in}]       : $4
- * @param[${5:in}]       : $6
- * @return          : ${7:Status}
- * @retval          : ${8:QAPI_OK} on success
- * @retval          : ${9:QAPI_ERROR} on failure
+ * @function : $1
+ * @brief    : $1
+ * @param[${3:in}] : $4
+ * @param[${5:in}] : $6
+ * @return : ${7:Status}
+ * @retval : ${8:QAPI_OK} on success
+ * @retval : ${9:QAPI_ERROR} on failure
  */
 endsnippet
 
 snippet f3b "For according to Coding Guidelines"
 /**
- * @function        : $1
- * @brief           : $1
- * @param[${3:in}]       : $4
- * @param[${5:in}]       : $6
- * @param[${7:in}]       : $8
- * @return          : ${9:Status}
- * @retval          : ${10:QAPI_OK} on success
- * @retval          : ${11:QAPI_ERROR} on failure
+ * @function : $1
+ * @brief    : $1
+ * @param[${3:in}] : $4
+ * @param[${5:in}] : $6
+ * @param[${7:in}] : $8
+ * @return : ${9:Status}
+ * @retval : ${10:QAPI_OK} on success
+ * @retval : ${11:QAPI_ERROR} on failure
  */
 endsnippet
 
 snippet f4b "For according to Coding Guidelines"
 /**
- * @function        : $1
- * @brief           : $1
- * @param[${3:in}]       : $4
- * @param[${5:in}]       : $6
- * @param[${7:in}]       : $8
- * @param[${9:in}]       : $10
- * @return          : ${11:Status}
- * @retval          : ${12:QAPI_OK} on success
- * @retval          : ${13:QAPI_ERROR} on failure
+ * @function : $1
+ * @brief    : $1
+ * @param[${3:in}] : $4
+ * @param[${5:in}] : $6
+ * @param[${7:in}] : $8
+ * @param[${9:in}] : $10
+ * @return : ${11:Status}
+ * @retval : ${12:QAPI_OK} on success
+ * @retval : ${13:QAPI_ERROR} on failure
  */
 endsnippet
 
 snippet cfb "For according to Coding Guidelines"
 /**
- * @function        : $1
- * @brief           : $1
- * @param[in]       : ${3:Parameter Count}
- * @param[in]       : ${4:Parameter List}
- * @return          : ${5:Status}
- * @retval          : ${6:QAPI_OK on success}
- * @retval          : ${7:QAPI_ERROR on failure}
+ * @function  : $1
+ * @brief     : $1
+ * @param[in] : ${3:Parameter Count}
+ * @param[in] : ${4:Parameter List}
+ * @return    : ${5:Status}
+ * @retval    : ${6:QAPI_OK on success}
+ * @retval    : ${7:QAPI_ERROR on failure}
  */
 endsnippet
 
@@ -149,9 +149,9 @@ endsnippet
 
 snippet filebanner "Licence Info and stuff"
 /**
- * @file     : `!v expand('%:t')`
- * @brief    : $2
- * @author   : Shreel Chhatbar (shreel.chhatbar@vvdntech.in)
+ * @file   : `!v expand('%:t')`
+ * @brief  : $2
+ * @author : Shreel Chhatbar (shreel.chhatbar@vvdntech.in)
  * @copyright: TODO
  */
 endsnippet

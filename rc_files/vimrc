@@ -70,6 +70,7 @@ nnoremap <leader>n   :set invnumber<CR>
 nnoremap <leader>u   :UndotreeToggle<cr>
 nnoremap <silent> <Esc><Esc> <Esc>:nohlsearch<CR><Esc>
 nnoremap <leader>c   :IndentLinesToggle<CR>:set invnumber<CR>:GitGutterSignsToggle<CR>
+nnoremap <leader>]   :normal da}<CR>
 
 set t_Co=256
 set incsearch
@@ -187,6 +188,9 @@ let g:gutentags_ctags_extra_args = ['--fields=+l --extra=+f --langdef=file']
 let g:gutentags_project_root = ['.project']
 let g:ctrlp_root_markers = ['.project']
 
+"ycm
+let g:ycm_show_diagnostics_ui = 0
+
 " make YCM compatible with UltiSnips (using supertab)
 let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
@@ -218,7 +222,7 @@ let g:ycm_collect_identifiers_from_tags_files = 1
 let g:ack_use_cword_for_empty_search = 0
 
 "space between comment and stuff like that
-let NERDSpaceDelims=1
+let NERDSpaceDelims=0
 let NERDDefaultAlign='left'
 let g:NERDAltDelims_c = 1
 let g:NERDAltDelims_cpp = 1
