@@ -1,0 +1,24 @@
+Time Frame : 5m(strictly changes only to go back to check out the LOW for 1m / 3m
+Do not trade on any other time frame's indicator.
+
+Indicators :
+
+1 ) Supertrend     : 7,3
+2 ) Supertrend     : 10,3
+3 ) Moving Average : 10
+4 ) MACD           : Default
+5 ) ADX            : Default
+6 ) RSI            : Default(Just for checking )
+
+Notes :
+
+-> Avoid controversial stocks.
+-> Add 3 top gainers and losers.
+-> Play with stop loss from now on!!
+-> Continious forming of candle sticks on SMA 10 is sign of sideways market.
+-> Avoid SPIKES!.
+-> If SMA 20 is not supporting SMA 10, chances are of a sudden spike and loss!!.
+
+Keep Screen 1 to monitor HOLDINGS and related.
+Keep Screen 2 for checking out top gainers of pre market
+Keep Screen 3 for checking out top losers of the pre market.
