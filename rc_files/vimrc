@@ -48,33 +48,48 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
+"Function to toggle the mouse [Key = leader + m]
+function! ToggleMouse()
+    "check if mouse is enabled
+    if &mouse == 'a'
+        " disable mouse
+        set mouse=
+    else
+        " enable mouse everywhere
+        set mouse=a
+    endif
+endfunc
+
 "Remove all trailing whitespace by pressing F3
-nnoremap <F3>        :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
-nnoremap <leader>t   :TagbarOpen fj<CR>
-nnoremap <leader>tx  :TagbarClose<CR>
-nnoremap <leader>g   :GitGutterLineHighlightsToggle<CR>
-nnoremap <leader>gp  :GitGutterPrevHunk<CR>
-nnoremap <leader>gn  :GitGutterNextHunk<CR>
-nnoremap <leader>gt  :GitGutterSignsToggle<CR>
-nnoremap <leader>a   :bp<CR>
-nnoremap <leader>d   :bn<CR>
-nnoremap <leader>x   :bd<CR>
-nnoremap <leader>i   :IndentLinesToggle<CR>
-nnoremap <leader>h   :A<CR>
-map <c-d>            :Dox<CR>
-nnoremap <leader>f   :Ack<space>
-nnoremap <leader>fs  :Ack<space><c-r>=expand("<cword>")<cr><CR>
-nnoremap <leader>cr  :CCTreeTraceReverse<CR>
-nnoremap <leader>cf  :CCTreeTraceForward<CR>
-nnoremap <leader>n   :set invnumber<CR>
-nnoremap <leader>u   :UndotreeToggle<cr>
-nnoremap <silent> <Esc><Esc> <Esc>:nohlsearch<CR><Esc>
-nnoremap <leader>c   :IndentLinesToggle<CR>:set invnumber<CR>:GitGutterSignsToggle<CR>
-nnoremap <leader>]   :normal da}<CR>
+nnoremap <F3>                      :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
+nnoremap <leader>c                 :IndentLinesToggle<CR>:set invnumber<CR>:GitGutterSignsToggle<CR>
+nnoremap <leader>t                 :TagbarOpen fj<CR>
+nnoremap <leader>tx                :TagbarClose<CR>
+nnoremap <leader>g                 :GitGutterLineHighlightsToggle<CR>
+nnoremap <leader>gp                :GitGutterPrevHunk<CR>
+nnoremap <leader>gn                :GitGutterNextHunk<CR>
+nnoremap <leader>gt                :GitGutterSignsToggle<CR>
+nnoremap <leader>a                 :bp<CR>
+nnoremap <leader>d                 :bn<CR>
+nnoremap <leader>x                 :bd<CR>
+nnoremap <leader>i                 :IndentLinesToggle<CR>
+nnoremap <leader>h                 :A<CR>
+map <c-d>                          :Dox<CR>
+nnoremap <leader>f                 :Ack<space>
+nnoremap <leader>fs                :Ack<space><c-r>=expand("<cword>")<cr><CR>
+nnoremap <leader>cr                :CCTreeTraceReverse<CR>
+nnoremap <leader>cf                :CCTreeTraceForward<CR>
+nnoremap <leader>n                 :set invnumber<CR>
+nnoremap <leader>u                 :UndotreeToggle<cr>
+nnoremap <silent> <Esc><Esc> <Esc> :nohlsearch<CR><Esc>
+nnoremap <leader>]                 :normal da}<CR>
+nnoremap <leader>m                 :call ToggleMouse()<CR>
+
 
 set t_Co=256
 set incsearch
 set hlsearch
+set nowrapscan
 set hidden
 set showmatch
 set noswapfile
@@ -119,8 +134,9 @@ if has("autocmd")
 endif
 
 "Indent every file before saving
-autocmd BufWritePre *.h :normal gg=G``
-autocmd BufWritePre *.c :normal gg=G``
+"autocmd BufWritePre *.h :normal gg=G``
+"autocmd BufWritePre *.c :normal gg=G``
+autocmd BufWritePre .*rc :normal gg=G``
 
 "Remove whitespace before saving
 autocmd BufWritePre * :%s/\s\+$//e
@@ -217,6 +233,7 @@ let g:ycm_disable_for_files_larger_than_kb = 0
 
 "ycm getting info from the tag file
 let g:ycm_collect_identifiers_from_tags_files = 1
+let g:ycm_min_num_of_chars_for_completion = 5
 
 "search the word under the cursor using ack
 let g:ack_use_cword_for_empty_search = 0
@@ -253,7 +270,20 @@ let g:DoxygenToolkit_compactDoc = "yes"
 
 let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
 if executable('ag')
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+    let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 endif
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_regexp = 1
+
+""Status Line {
+"set laststatus=2
+"set statusline=
+"set statusline+=%-10.3n\
+"set statusline+=%f\
+"set statusline+=%h%m%r%w
+"set statusline+=\[%{strlen(&ft)?&ft:'none'}]
+"set statusline+=%=
+"set statusline+=0x%-8B
+"set statusline+=%-14(%l,%c%V%)
+"set statusline+=%<%P
+"" }
