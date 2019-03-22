@@ -161,3 +161,11 @@ if ${2:[[ ${1:condition} ]]}; then
     ${0:#statements}
 fi
 endsnippet
+
+snippet todo "personal to do"
+//TODO : ${1:Description}
+endsnippet
+
+snippet thread "tp thread creation"
+skylo_thread_create("$1",$2_THREAD_PRIORITY,$2_THREAD_STACK_SIZE,$3,NULL);
+endsnippet

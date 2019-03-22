@@ -75,8 +75,8 @@ nnoremap <leader>x                 :bd<CR>
 nnoremap <leader>i                 :IndentLinesToggle<CR>
 nnoremap <leader>h                 :A<CR>
 map <c-d>                          :Dox<CR>
-nnoremap <leader>f                 :Ack<space>
-nnoremap <leader>fs                :Ack<space><c-r>=expand("<cword>")<cr><CR>
+nnoremap <leader>f                 :TagbarClose<CR>:Ack!<space>
+nnoremap <leader>fs                :TagbarClose<CR>:Ack!<space><c-r>=expand("<cword>")<cr><CR>
 nnoremap <leader>cr                :CCTreeTraceReverse<CR>
 nnoremap <leader>cf                :CCTreeTraceForward<CR>
 nnoremap <leader>n                 :set invnumber<CR>
