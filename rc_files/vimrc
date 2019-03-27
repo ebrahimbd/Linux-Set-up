@@ -8,29 +8,29 @@ call vundle#begin()
 "call vundle#begin('~/some/path/here')
 
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'mileszs/ack.vim'
+Plugin 'airblade/vim-gitgutter'
 Plugin 'a.vim'
-Plugin 'hari-rangarajan/cctree'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'vim-scripts/DoxygenToolkit.vim'
-Plugin 'yggdroot/indentline'
 Plugin 'cohama/lexima.vim'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'majutsushi/tagbar'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'dhruvasagar/vim-table-mode'
+Plugin 'ervandew/supertab'
+Plugin 'flazz/vim-colorschemes'
 Plugin 'godlygeek/tabular'
-Plugin 'mbbill/undotree'
-Plugin 'SirVer/ultisnips'
+Plugin 'hari-rangarajan/cctree'
 Plugin 'honza/vim-snippets'
+Plugin 'kana/vim-submode'
+Plugin 'ludovicchabant/vim-gutentags'
+Plugin 'majutsushi/tagbar'
+Plugin 'mbbill/undotree'
+Plugin 'mileszs/ack.vim'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'SirVer/ultisnips'
+Plugin 'tpope/vim-fugitive'
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'dhruvasagar/vim-table-mode'
-Plugin 'tpope/vim-fugitive'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'flazz/vim-colorschemes'
-Plugin 'kana/vim-submode'
-Plugin 'ervandew/supertab'
-Plugin 'ludovicchabant/vim-gutentags'
-Plugin 'Valloric/YouCompleteMe'
+Plugin 'vim-scripts/DoxygenToolkit.vim'
+Plugin 'yggdroot/indentline'
 
 " All of your Plugins must be added before the following line
 "
@@ -61,56 +61,56 @@ function! ToggleMouse()
 endfunc
 
 "Remove all trailing whitespace by pressing F3
+map <c-d>                          :Dox<CR>
 nnoremap <F3>                      :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
+nnoremap <leader>a                 :bp<CR>
+nnoremap <leader>cf                :CCTreeTraceForward<CR>
 nnoremap <leader>c                 :IndentLinesToggle<CR>:set invnumber<CR>:GitGutterSignsToggle<CR>
+nnoremap <leader>cr                :CCTreeTraceReverse<CR>
+nnoremap <leader>d                 :bn<CR>
+nnoremap <leader>fs                :TagbarClose<CR>:Ack!<space><c-r>=expand("<cword>")<cr><CR>
+nnoremap <leader>f                 :TagbarClose<CR>:Ack!<space>
+nnoremap <leader>g                 :GitGutterLineHighlightsToggle<CR>
+nnoremap <leader>gn                :GitGutterNextHunk<CR>
+nnoremap <leader>gp                :GitGutterPrevHunk<CR>
+nnoremap <leader>gt                :GitGutterSignsToggle<CR>
+nnoremap <leader>h                 :A<CR>
+nnoremap <leader>i                 :IndentLinesToggle<CR>
+nnoremap <leader>m                 :call ToggleMouse()<CR>
+nnoremap <leader>]                 :normal da}<CR>
+nnoremap <leader>n                 :set invnumber<CR>
 nnoremap <leader>t                 :TagbarOpen fj<CR>
 nnoremap <leader>tx                :TagbarClose<CR>
-nnoremap <leader>g                 :GitGutterLineHighlightsToggle<CR>
-nnoremap <leader>gp                :GitGutterPrevHunk<CR>
-nnoremap <leader>gn                :GitGutterNextHunk<CR>
-nnoremap <leader>gt                :GitGutterSignsToggle<CR>
-nnoremap <leader>a                 :bp<CR>
-nnoremap <leader>d                 :bn<CR>
-nnoremap <leader>x                 :bd<CR>
-nnoremap <leader>i                 :IndentLinesToggle<CR>
-nnoremap <leader>h                 :A<CR>
-map <c-d>                          :Dox<CR>
-nnoremap <leader>f                 :TagbarClose<CR>:Ack!<space>
-nnoremap <leader>fs                :TagbarClose<CR>:Ack!<space><c-r>=expand("<cword>")<cr><CR>
-nnoremap <leader>cr                :CCTreeTraceReverse<CR>
-nnoremap <leader>cf                :CCTreeTraceForward<CR>
-nnoremap <leader>n                 :set invnumber<CR>
 nnoremap <leader>u                 :UndotreeToggle<cr>
+nnoremap <leader>x                 :bd<CR>
 nnoremap <silent> <Esc><Esc> <Esc> :nohlsearch<CR><Esc>
-nnoremap <leader>]                 :normal da}<CR>
-nnoremap <leader>m                 :call ToggleMouse()<CR>
 
 
-set t_Co=256
-set incsearch
-set hlsearch
-set nowrapscan
-set hidden
-set showmatch
-set noswapfile
-set wildmenu
-set bs=2
-syntax on
-set nu
-set tabstop=4 shiftwidth=4 expandtab
 colo heroku-terminal
-set undofile                " Save undos after file closes
+set bs=2
+set hidden
+set hlsearch
+set incsearch
+set noswapfile
+set nowrapscan
+set nu
+set showmatch
+set tabstop=4 shiftwidth=4 expandtab
+set t_Co=256
+set textwidth=118
 set undodir=$HOME/.vim/undo " where to save undo histories
+set undofile                " Save undos after file closes
 set undolevels=1000         " How many undos
 set undoreload=10000        " number of lines to save for undo
 set updatetime=5000
-set textwidth=118
+set wildmenu
+syntax on
 
 "folding settings
+set foldlevel=1         "this is just what i use
 set foldmethod=indent   "fold based on indent
 set foldnestmax=10      "deepest fold is 10 levels
 set nofoldenable        "dont fold by default
-set foldlevel=1         "this is just what i use
 
 "if you want to highlight the whole line
 "To highlight lines longer than 120 characters.
@@ -237,6 +237,7 @@ let g:ycm_min_num_of_chars_for_completion = 5
 
 "search the word under the cursor using ack
 let g:ack_use_cword_for_empty_search = 0
+let g:ackhighlight = 1
 
 "space between comment and stuff like that
 let NERDSpaceDelims=0
@@ -274,16 +275,3 @@ if executable('ag')
 endif
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_regexp = 1
-
-""Status Line {
-"set laststatus=2
-"set statusline=
-"set statusline+=%-10.3n\
-"set statusline+=%f\
-"set statusline+=%h%m%r%w
-"set statusline+=\[%{strlen(&ft)?&ft:'none'}]
-"set statusline+=%=
-"set statusline+=0x%-8B
-"set statusline+=%-14(%l,%c%V%)
-"set statusline+=%<%P
-"" }
