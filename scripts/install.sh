@@ -30,7 +30,7 @@ then
     sudo rm ~/.bashrc
     rm ~/.conkyrc
     rm ~/.conkylogs
-    sudo apt-get -y remove fonts-powerline exuberant-ctags cscope build-essential cmake python3-dev ack-grep conky-all
+    sudo apt-get -y remove fonts-powerline exuberant-ctags cscope build-essential cmake python3-dev python2.7-dev ack-grep conky-all meld
     sudo apt-get -y autoremove
     sudo apt-get -y autoclean
 fi
