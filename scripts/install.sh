@@ -45,7 +45,13 @@ then
 
     #TODO : Need to seperate depencies according to the distro.
     echo "Installing all the dependencies "
-    sudo apt-get -y install fonts-powerline exuberant-ctags cscope build-essential cmake python3-dev ack-grep
+    sudo apt-get -y install vim  exuberant-ctags cscope build-essential cmake python3-dev ack-grep
+    
+    git clone https://github.com/powerline/fonts.git --depth=1
+    cd fonts
+    ./install.sh
+    cd ..
+    rm -rf fonts
 
     echo "Replacing the .vimrc files "
     sudo rm ~/.vimrc
