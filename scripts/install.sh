@@ -30,7 +30,7 @@ then
     sudo rm ~/.bashrc
     rm ~/.conkyrc
     rm ~/.conkylogs
-    sudo apt-get -y remove fonts-powerline exuberant-ctags cscope build-essential cmake python3-dev python2.7-dev ack-grep conky-all meld
+    sudo apt-get -y remove exuberant-ctags cscope build-essential cmake python3-dev python2.7-dev ack-grep conky-all
     sudo apt-get -y autoremove
     sudo apt-get -y autoclean
 fi
@@ -46,12 +46,6 @@ then
     #TODO : Need to seperate depencies according to the distro.
     echo "Installing all the dependencies "
     sudo apt-get -y install vim  exuberant-ctags cscope build-essential cmake python3-dev ack-grep
-
-    git clone https://github.com/powerline/fonts.git --depth=1
-    cd fonts
-    ./install.sh
-    cd ..
-    rm -rf fonts
 
     echo "Replacing the .vimrc files "
     sudo rm ~/.vimrc
@@ -140,14 +134,8 @@ fi
 
 if [ "$1" == "packs" ] || [ "$1" == "all" ];
 then
-    sudo apt-get -y install numlockx docky synapse konsole
+    sudo apt-get -y install numlockx docky konsole meld
 fi
 
 echo "*************Linux Set Up is complete for $uservar.Have fun :)*****************"
-
-#Copy these into crontab :
-#@reboot DISPLAY=:0 /home/shreel/Linux-Set-up/scripts/numlockon.sh>/home/shreel/numlockonlogs 2>&1
-#@reboot DISPLAY=:0 /home/shreel/Linux-Set-up/scripts/conkysh>/home/shreel/cronlogs 2>&1
-#@reboot DISPLAY=:0 /home/shreel/Linux-Set-up/scripts/dockysh>/home/shreel/dockylogs 2>&1
-#@reboot DISPLAY=:0 /home/shreel/Linux-Set-up/scripts/synapsesh>/home/shreel/synpaselogs 2>&1
 

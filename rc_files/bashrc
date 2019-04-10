@@ -177,6 +177,16 @@ function gcfp(){
     git push
 }
 
+function push(){
+    #git push
+    gittoken ; git push
+}
+
+function pull(){
+    #git pull
+    gittoken ; git pull
+}
+
 alias setup="cd ~/Linux-Set-up"
 
 alias
