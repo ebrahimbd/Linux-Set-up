@@ -45,7 +45,7 @@ then
 
     #TODO : Need to seperate depencies according to the distro.
     echo "Installing all the dependencies "
-    sudo apt-get -y install vim  exuberant-ctags cscope build-essential cmake python3-dev ack-grep
+    sudo apt-get -y install vim  exuberant-ctags cscope build-essential cmake python3-dev python27-dev ack-grep
 
     echo "Replacing the .vimrc files "
     sudo rm ~/.vimrc
@@ -134,7 +134,7 @@ fi
 
 if [ "$1" == "packs" ] || [ "$1" == "all" ];
 then
-    sudo apt-get -y install numlockx docky konsole meld
+    sudo apt-get -y install numlockx docky konsole meld i3 lxappearance thunar
 fi
 
 echo "*************Linux Set Up is complete for $uservar.Have fun :)*****************"
