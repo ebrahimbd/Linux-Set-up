@@ -1,7 +1,7 @@
 #!/bin/sh
 
 export DISPLAY=:0
-sleep 60
+sleep 5
 
 echo "Executing numlockx"
 numlockx on
