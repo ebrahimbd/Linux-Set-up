@@ -122,20 +122,17 @@ then
     ln -s ~/Linux-Set-up/rc_files/conkylogs ~/.conkylogs
 fi
 
-if [ "$1" == "wall" ] || [ "$1" == "all" ];
-then
-    newvar=/home/$USER/Linux-Set-up/wallpaper/thelan_1920.jpg
-    echo "Setting the wallpaper"
-    echo $newvar
-    gsettings set org.gnome.desktop.background picture-uri file://$newvar
-
-    exit 1
-fi
-
 if [ "$1" == "packs" ] || [ "$1" == "all" ];
 then
-    sudo apt-get -y install numlockx docky konsole meld i3 lxappearance thunar
+    sudo apt-get -y install numlockx docky konsole meld i3 lxappearance thunar compton i3blocks feh
+done
 fi
 
 echo "*************Linux Set Up is complete for $uservar.Have fun :)*****************"
+cd /tmp && wget -qO - https://github.com/nana-4/materia-theme/archive/master.tar.gz | tar xz
+cd materia-theme-master
+sudo ./install.sh
 
+mkdir -p ~/.icons
+cd ~/.icons
+git clone https://github.com/rudrab/Shadow.git
