@@ -10,7 +10,6 @@ then
     echo "ycm   :       to install clang completer for ycm"
     echo "git   :       to install the git settings only"
     echo "bash  :       to install the bash settings only"
-    echo "conky :       to install the conky settings only"
     echo "packs :       to install my personal packages"
     echo "all   :       for the complete setup"
     echo "clean :       to remove the complete setup"
@@ -28,9 +27,7 @@ then
     sudo rm -rvf ~/.vim
     sudo rm ~/.gitconfig
     sudo rm ~/.bashrc
-    rm ~/.conkyrc
-    rm ~/.conkylogs
-    sudo apt-get -y remove exuberant-ctags cscope build-essential cmake python3-dev python2.7-dev ack-grep conky-all
+    sudo apt-get -y remove exuberant-ctags cscope build-essential cmake python3-dev python2.7-dev ack-grep
     sudo apt-get -y autoremove
     sudo apt-get -y autoclean
 fi
@@ -110,16 +107,6 @@ then
     echo "Adding the bash config"
     sudo rm ~/.bashrc
     ln -s ~/Linux-Set-up/rc_files/bashrc ~/.bashrc
-fi
-
-if [ "$1" == "conky" ] || [ "$1" == "all" ];
-then
-    sudo apt -y install conky-all
-    echo "Putting in the .conkyrc files"
-    rm ~/.conkyrc
-    rm ~/.conkylogs
-    ln -s ~/Linux-Set-up/rc_files/conkyrc ~/.conkyrc
-    ln -s ~/Linux-Set-up/rc_files/conkylogs ~/.conkylogs
 fi
 
 if [ "$1" == "packs" ] || [ "$1" == "all" ];
