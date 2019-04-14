@@ -111,15 +111,12 @@ fi
 
 if [ "$1" == "packs" ] || [ "$1" == "all" ];
 then
-    sudo apt-get -y install numlockx docky konsole meld i3 lxappearance thunar compton i3blocks feh
-done
+    sudo apt-get -y install numlockx konsole meld
+fi
+
+if [ "$1" == "i3" ];
+then
+    ./~/Linux-Set-up/scripts/i3.sh
 fi
 
 echo "*************Linux Set Up is complete for $uservar.Have fun :)*****************"
-cd /tmp && wget -qO - https://github.com/nana-4/materia-theme/archive/master.tar.gz | tar xz
-cd materia-theme-master
-sudo ./install.sh
-
-mkdir -p ~/.icons
-cd ~/.icons
-git clone https://github.com/rudrab/Shadow.git
