@@ -11,6 +11,10 @@ cp -r ~/Linux-Set-up/i3/config ~/.config/i3/config
 mkdir ~/.fonts
 cp ~/Linux-Set-up/fonts/*.ttf ~/.fonts/
 
+#Copying i3-blocks configuration
+sudo rm /etc/i3blocks.conf
+sudo cp ~/Linux-Set-up/i3/i3blocks.conf /etc/i3blocks.conf
+
 #Material Theme
 cd /tmp && wget -qO - https://github.com/nana-4/materia-theme/archive/master.tar.gz | tar xz
 cd materia-theme-master
