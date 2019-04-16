@@ -12,6 +12,7 @@ then
     echo "bash  :       to install the bash settings only"
     echo "packs :       to install my personal packages"
     echo "all   :       for the complete setup"
+    echo "i3    :       to install the i3 setup"
     echo "clean :       to remove the complete setup"
 fi
 
@@ -116,7 +117,7 @@ fi
 
 if [ "$1" == "i3" ];
 then
-    ./~/Linux-Set-up/scripts/i3.sh
+    ./scripts/i3.sh
 fi
 
 echo "*************Linux Set Up is complete for $uservar.Have fun :)*****************"

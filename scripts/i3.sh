@@ -1,19 +1,20 @@
 #!/bin/bash
 
 #Installing required packages
-sudo apt install i3 lxappearance thunar compton i3blocks feh
+sudo apt install i3 lxappearance thunar compton i3blocks feh shutter
 
 #Putting the configuration files in place
 rm ~/.config/i3/config
 cp -r ~/Linux-Set-up/i3/config ~/.config/i3/config
 
 #Installing the fonts-awesome
+rm -rvf ~/.fonts
 mkdir ~/.fonts
-cp ~/Linux-Set-up/fonts/*.ttf ~/.fonts/
+cp -v ~/Linux-Set-up/fonts/*.ttf ~/.fonts/
 
 #Copying i3-blocks configuration
-sudo rm /etc/i3blocks.conf
-sudo cp ~/Linux-Set-up/i3/i3blocks.conf /etc/i3blocks.conf
+#sudo rm /etc/i3blocks.conf
+#sudo cp ~/Linux-Set-up/i3/i3blocks.conf /etc/i3blocks.conf
 
 #Material Theme
 cd /tmp && wget -qO - https://github.com/nana-4/materia-theme/archive/master.tar.gz | tar xz

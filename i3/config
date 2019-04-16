@@ -190,3 +190,7 @@ bar {
 }
 
 hide_edge_borders both
+
+# print screen (requires shutter)
+bindsym Print exec --no-startup-id shutter -s
+for_window [class="Shutter" instance="shutter"] floating enable
