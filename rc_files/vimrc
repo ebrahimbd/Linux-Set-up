@@ -270,6 +270,10 @@ let g:submode_timeout = 0
 let g:DoxygenToolkit_compactDoc = "yes"
 
 let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
+if exists("g:ctrl_user_command")
+    unlet g:ctrlp_user_command
+endif
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/vendor/*,*/\.git/*
 if executable('ag')
     let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 endif
