@@ -28,7 +28,7 @@ then
     sudo rm -rvf ~/.vim
     sudo rm ~/.gitconfig
     sudo rm ~/.bashrc
-    sudo apt-get -y remove exuberant-ctags cscope build-essential cmake python3-dev python2.7-dev ack-grep
+    sudo apt-get -y remove exuberant-ctags cscope build-essential cmake python3-dev python2.7-dev ack-grep silversearcher-ag
     sudo apt-get -y autoremove
     sudo apt-get -y autoclean
 fi
@@ -43,7 +43,7 @@ then
 
     #TODO : Need to seperate depencies according to the distro.
     echo "Installing all the dependencies "
-    sudo apt-get -y install vim  exuberant-ctags cscope build-essential cmake python3-dev python27-dev ack-grep
+    sudo apt-get -y install vim  exuberant-ctags cscope build-essential cmake python3-dev python2.7-dev ack-grep silversearcher-ag
 
     echo "Replacing the .vimrc files "
     sudo rm ~/.vimrc
