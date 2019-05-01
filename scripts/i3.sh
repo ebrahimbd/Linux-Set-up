@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #Installing required packages
-sudo apt install i3 lxappearance thunar compton i3blocks feh shutter
+sudo apt install i3 lxappearance thunar compton i3blocks feh shutter blueman
 
 #Putting the configuration files in place
 rm ~/.config/i3/config
