@@ -12,6 +12,7 @@ then
     echo "bash  :       to install the bash settings only"
     echo "packs :       to install my personal packages"
     echo "all   :       for the complete setup"
+    echo "i3    :       to install the i3 setup"
     echo "clean :       to remove the complete setup"
 fi
 
@@ -27,7 +28,7 @@ then
     sudo rm -rvf ~/.vim
     sudo rm ~/.gitconfig
     sudo rm ~/.bashrc
-    sudo apt-get -y remove exuberant-ctags cscope build-essential cmake python3-dev python2.7-dev ack-grep
+    sudo apt-get -y remove exuberant-ctags cscope build-essential cmake python3-dev python2.7-dev ack-grep silversearcher-ag
     sudo apt-get -y autoremove
     sudo apt-get -y autoclean
 fi
@@ -42,7 +43,7 @@ then
 
     #TODO : Need to seperate depencies according to the distro.
     echo "Installing all the dependencies "
-    sudo apt-get -y install vim  exuberant-ctags cscope build-essential cmake python3-dev python27-dev ack-grep
+    sudo apt-get -y install vim  exuberant-ctags cscope build-essential cmake python3-dev python2.7-dev ack-grep silversearcher-ag
 
     echo "Replacing the .vimrc files "
     sudo rm ~/.vimrc
@@ -116,7 +117,7 @@ fi
 
 if [ "$1" == "i3" ];
 then
-    ./~/Linux-Set-up/scripts/i3.sh
+    ./scripts/i3.sh
 fi
 
 echo "*************Linux Set Up is complete for $uservar.Have fun :)*****************"
