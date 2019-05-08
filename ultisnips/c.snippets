@@ -42,13 +42,22 @@ endsnippet
 
 snippet fb "For according to Coding Guidelines"
 /**
- * @function : $1
- * @brief    : $1
- * @param[${3:in}] : $4
- * @return  : ${5:Status}
- * @retval  : ${6:QAPI_OK} on success
- * @retval  : ${7:QAPI_ERROR} on failure
- */
+ * @brief
+ * $1
+ *
+ * @details
+ * $1
+ *
+ * @param[${2:in}] $3 $4
+ *
+ * @return ${5:0} on success, negative value on failure.
+ *
+ * @return An error code if negative; one of the following values:
+ *               @par
+ *               QAPI_OK on success. \n
+ *               QAPI_ERR_INVALID_PARAM on invalid parameter. \n
+ *               QAPI_ERROR on failure.
+*/
 endsnippet
 
 snippet f2b "For according to Coding Guidelines"
@@ -154,12 +163,6 @@ snippet filebanner "Licence Info and stuff"
  * @author : Shreel Chhatbar (shreel.chhatbar@vvdntech.in)
  * @copyright: TODO
  */
-endsnippet
-
-snippet if "if ... then (if)"
-if ${2:[[ ${1:condition} ]]}; then
-    ${0:#statements}
-fi
 endsnippet
 
 snippet todo "personal to do"

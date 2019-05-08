@@ -84,6 +84,7 @@ nnoremap <leader>t                 :TagbarOpen fj<CR>
 nnoremap <leader>tx                :TagbarClose<CR>
 nnoremap <leader>u                 :UndotreeToggle<cr>
 nnoremap <leader>x                 :bd<CR>
+nnoremap <leader>p                 :CtrlPTags
 nnoremap <silent> <Esc><Esc> <Esc> :nohlsearch<CR><Esc>
 
 
@@ -135,8 +136,9 @@ if has("autocmd")
 endif
 
 "Indent every file before saving
-"autocmd BufWritePre *.h :normal gg=G``
-"autocmd BufWritePre *.c :normal gg=G``
+autocmd BufWritePre *.h :normal gg=G``
+autocmd BufWritePre *.c :normal gg=G``
+autocmd BufWritePre *.py :normal gg=G``
 autocmd BufWritePre .*rc :normal gg=G``
 
 "Remove whitespace before saving
