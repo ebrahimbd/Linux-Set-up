@@ -203,7 +203,7 @@ let g:tagbar_compact = 1
 
 "gutentags
 let g:gutentags_modules = ['ctags']
-let g:gutentags_ctags_extra_args = ['--fields=+l --extra=+f --langdef=file --c-kinds=+lx']
+let g:gutentags_ctags_extra_args = ['--fields=+iaSl --extra=+fq --langdef=file --c-kinds=+lxp']
 let g:gutentags_project_root = ['.project']
 let g:ctrlp_root_markers = ['.project']
 
