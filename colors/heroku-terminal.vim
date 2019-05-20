@@ -1,4 +1,4 @@
-" Heroku Colorscheme 
+" Heroku Colorscheme
 "
 " - iTerm2 only
 " - Depends on heroku colorscheme for iTerm2
@@ -286,13 +286,13 @@ if &t_Co == 88 || &t_Co == 256
   call <SID>X("Type", s:blue, "", "none")
   call <SID>X("Define", s:purple, "", "none")
   call <SID>X("Include", s:blue, "", "")
-  "call <SID>X("Ignore", "666666", "", "")
+  call <SID>X("Ignore", "666666", "", "")
 
   " Vim Highlighting
   call <SID>X("vimCommand", s:red, "", "none")
 
   " C Highlighting
-  call <SID>X("cType", s:yellow, "", "")
+  call <SID>X("cType", s:purple, "", "")
   call <SID>X("cStorageClass", s:purple, "", "")
   call <SID>X("cConditional", s:purple, "", "")
   call <SID>X("cRepeat", s:purple, "", "")

@@ -235,8 +235,10 @@ set listchars=tab:>-,trail:~,extends:>,precedes:<
 let g:ycm_disable_for_files_larger_than_kb = 0
 
 "ycm getting info from the tag file
-let g:ycm_collect_identifiers_from_tags_files = 1
-let g:ycm_min_num_of_chars_for_completion = 5
+let g:ycm_collect_identifiers_from_tags_files = 0
+let g:ycm_min_num_of_chars_for_completion = 0
+
+let g:ycm_cache_omnifunc = 0
 
 "search the word under the cursor using ack
 let g:ack_use_cword_for_empty_search = 0
