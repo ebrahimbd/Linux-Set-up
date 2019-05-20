@@ -16,6 +16,10 @@ cp -v ~/Linux-Set-up/fonts/*.ttf ~/.fonts/
 sudo rm ~/.i3blocks.conf
 sudo ln -s ~/Linux-Set-up/i3/i3blocks.conf ~/.i3blocks.conf
 
+#Copying the compton configuration
+sudo rm ~/.compton.conf
+sudo ln -s ~/Linux-Set-up/i3/compton.conf ~/.compton.conf
+
 #Material Theme
 cd /tmp && wget -qO - https://github.com/nana-4/materia-theme/archive/master.tar.gz | tar xz
 cd materia-theme-master
