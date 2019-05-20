@@ -1,7 +1,10 @@
 #!/bin/bash
 
 #Installing required packages
-sudo apt install i3 lxappearance thunar compton i3blocks feh shutter blueman
+sudo apt install i3 lxappearance thunar compton i3blocks feh shutter blueman rofi
+
+#Create a user command to sync i3 config files
+sudo cp ~/Linux-Set-up/i3/backupi3config /usr/bin/
 
 #Putting the configuration files in place
 rm ~/.config/i3/config

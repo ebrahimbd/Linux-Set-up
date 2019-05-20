@@ -36,7 +36,8 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+x kill
 
 # start dmenu (a program launcher)
-bindsym $mod+r exec dmenu_run -l 10
+#bindsym $mod+r exec dmenu_run -l 10
+bindsym $mod+r exec rofi -show run -lines 20 -eh 1.3 -opacity "50" -bw 0 -font "System San Francisco Display 10"
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -119,6 +120,9 @@ bindsym $mod+Shift+7 move container to workspace 7
 bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace $wp10
+
+assign [class="konsole"] $wp1
+assign [class="Firefox"] $wp2
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
