@@ -176,7 +176,7 @@ function gcf(){
 function gcfp(){
     #git commit the file
     git commit -i "$1" -m "$2"
-    git push
+    push
 }
 
 function push(){
