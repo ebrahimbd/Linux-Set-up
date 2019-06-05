@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #Installing required packages
-sudo apt install i3 lxappearance thunar compton i3blocks feh shutter blueman rofi
+sudo apt install i3 lxappearance thunar compton i3blocks feh shutter blueman rofi arandr
 
 #Create a user command to sync i3 config files
 sudo cp ~/Linux-Set-up/i3/backupi3config /usr/bin/
@@ -34,4 +34,4 @@ cd ~/.icons
 git clone https://github.com/rudrab/Shadow.git
 
 #Open the lxappearance
-lxappearance
+#lxappearance
