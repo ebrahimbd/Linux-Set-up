@@ -179,7 +179,7 @@ client.placeholder      #000000 #0C0C0C #FFFFFF #000000   #0C0C0C
 client.background       #FFFFFF
 
 bar {
-    status_command i3blocks -c /home/shreel/.i3blocks.conf
+    status_command i3blocks -c ~/.i3blocks.conf
         position top
         colors {
             background #33353a
