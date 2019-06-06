@@ -160,9 +160,9 @@ bindsym $mod+z mode "resize"
 exec --no-startup-id compton
 exec --no-startup-id firefox
 exec --no-startup-id konsole
-exec --no-startup-id /home/shreel/Linux-Set-up/scripts/capslockoff.sh
-exec --no-startup-id /home/shreel/Linux-Set-up/scripts/numlockon.sh
-exec_always --no-startup-id feh --bg-scale /home/shreel/Linux-Set-up/wallpaper/linux_sudo.png
+exec --no-startup-id ~/Linux-Set-up/scripts/capslockoff.sh
+exec --no-startup-id ~/Linux-Set-up/scripts/numlockon.sh
+exec --no-startup-id ~/Linux-Set-up/scripts/screensaver.sh
 
 bindsym Control+Mod1+l exec i3lock
 
