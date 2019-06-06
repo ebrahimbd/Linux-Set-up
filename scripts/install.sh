@@ -27,6 +27,7 @@ then
     sudo rm ~/.ackrc
     sudo rm -rvf ~/.vim
     sudo rm ~/.gitconfig
+    sudo rm ~/.gitignore
     sudo rm ~/.bashrc
     sudo apt-get -y remove exuberant-ctags cscope build-essential cmake python3-dev python2.7-dev ack-grep silversearcher-ag
     sudo apt-get -y autoremove
@@ -101,6 +102,8 @@ then
     echo "Adding the git config"
     sudo rm ~/.gitconfig
     ln -s ~/Linux-Set-up/rc_files/gitconfig ~/.gitconfig
+    sudo rm ~/.gitignore
+    ln -s ~/Linux-Set-up/rc_files/gitignore ~/.gitignore
 fi
 
 if [ "$1" == "bash" ] || [ "$1" == "all" ];
