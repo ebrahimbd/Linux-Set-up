@@ -1,8 +1,7 @@
 #!/bin/sh
 
 export DISPLAY=:0
-sleep 60
+sleep 5
 
 # start the conky delayed.
 conky
-conky -c ~/.conkylogs
