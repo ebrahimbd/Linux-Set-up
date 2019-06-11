@@ -10,6 +10,7 @@ then
     echo "ycm   :       to install clang completer for ycm"
     echo "git   :       to install the git settings only"
     echo "bash  :       to install the bash settings only"
+    echo "conky :       to install the conky settings only"
     echo "packs :       to install my personal packages"
     echo "all   :       for the complete setup"
     echo "i3    :       to install the i3 setup"
@@ -29,7 +30,8 @@ then
     sudo rm ~/.gitconfig
     sudo rm ~/.gitignore
     sudo rm ~/.bashrc
-    sudo apt-get -y remove exuberant-ctags cscope build-essential cmake python3-dev python2.7-dev ack-grep silversearcher-ag
+    rm ~/.conkyrc
+    sudo apt-get -y remove exuberant-ctags cscope build-essential cmake python3-dev python2.7-dev ack-grep silversearcher-ag conky-all
     sudo apt-get -y autoremove
     sudo apt-get -y autoclean
 fi
@@ -111,6 +113,14 @@ then
     echo "Adding the bash config"
     sudo rm ~/.bashrc
     ln -s ~/Linux-Set-up/rc_files/bashrc ~/.bashrc
+fi
+
+if [ "$1" == "conky" ] || [ "$1" == "all" ];
+then
+    sudo apt -y install conky-all
+    echo "Putting in the .conkyrc files"
+    rm ~/.conkyrc
+    ln -s ~/Linux-Set-up/rc_files/conkyrc ~/.conkyrc
 fi
 
 if [ "$1" == "packs" ] || [ "$1" == "all" ];

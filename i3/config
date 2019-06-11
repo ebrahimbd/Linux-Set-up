@@ -161,6 +161,7 @@ exec --no-startup-id compton
 exec --no-startup-id firefox
 exec --no-startup-id konsole
 exec --no-startup-id ~/Linux-Set-up/scripts/capslockoff.sh
+exec --no-startup-id ~/Linux-Set-up/scripts/conky.sh
 exec --no-startup-id ~/Linux-Set-up/scripts/numlockon.sh
 exec --no-startup-id ~/Linux-Set-up/scripts/screensaver.sh
 
