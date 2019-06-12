@@ -221,3 +221,7 @@ bindsym XF86AudioPlay exec playerctl play
 bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
+
+#change wallpaper
+bindsym $mod+w exec feh --randomize --bg-scale ~/Linux-Set-up/wallpaper/*
+
