@@ -40,5 +40,8 @@ conky.config = {
 }
 
 conky.text = [[
+#    ${color #777799}${execpi 5 cat /tmp/nifty-pre.txt}
+#    ${color white}NIFTY: ${color #11ff11}${execpi 5 cat /tmp/nifty1.txt}
+#    ${color white}Change: ${color #ffff11}${execpi 5 cat /tmp/nifty2.txt}
     ${time %H:%M:%S}\
 ]]
