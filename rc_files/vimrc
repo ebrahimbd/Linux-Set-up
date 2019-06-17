@@ -82,11 +82,10 @@ nnoremap <leader>]                 :normal da}<CR>
 nnoremap <leader>n                 :set invnumber<CR>
 nnoremap <leader>t                 :TagbarOpen fj<CR>
 nnoremap <leader>tx                :TagbarClose<CR>
-nnoremap <leader>u                 :UndotreeToggle<cr>
+nnoremap <leader>u                 :UndotreeToggle<CR>
 nnoremap <leader>x                 :bd<CR>
 nnoremap <leader>p                 :CtrlPTag
-nnoremap <silent> <Esc><Esc> <Esc> :nohlsearch<CR><Esc>
-
+nnoremap <leader>1                 :let @/ = ""<CR>
 
 colo heroku-terminal
 set bs=2
