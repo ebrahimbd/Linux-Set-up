@@ -1,7 +1,9 @@
 #!/bin/bash
 
+packages="i3 lxappearance thunar compton i3blocks feh shutter blueman rofi arandr conky-all"
+
 echo "Installing required packages for i3"
-sudo apt install i3 lxappearance thunar compton i3blocks feh shutter blueman rofi arandr
+sudo apt -y install $packages
 
 echo "Create a user command to sync i3 config files"
 sudo cp ~/Linux-Set-up/i3/backupi3config /usr/bin/
@@ -27,12 +29,17 @@ echo "Copying the compton configuration"
 sudo rm ~/.compton.conf
 sudo ln -s ~/Linux-Set-up/i3/compton.conf ~/.compton.conf
 
-echo "Material Theme"
-cd /tmp && wget -qO - https://github.com/nana-4/materia-theme/archive/master.tar.gz | tar xz
-cd materia-theme-master
-sudo ./install.sh
+#echo "Material Theme"
+#cd /tmp && wget -qO - https://github.com/nana-4/materia-theme/archive/master.tar.gz | tar xz
+#cd materia-theme-master
+#sudo ./install.sh
 
 echo "Shadow Icons"
 mkdir -p ~/.icons
 cd ~/.icons
 git clone https://github.com/rudrab/Shadow.git
+
+echo "Putting in the .conkyrc files"
+rm ~/.conkyrc
+ln -s ~/Linux-Set-up/rc_files/conkyrc ~/.conkyrc
+

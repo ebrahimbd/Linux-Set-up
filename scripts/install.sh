@@ -18,6 +18,7 @@ then
 fi
 
 uservar=$(whoami)
+packages="vim exuberant-ctags cscope build-essential cmake python3-dev python2.7-dev ack-grep silversearcher-ag"
 
 echo "Installation being carried out for user $uservar only"
 
@@ -31,9 +32,11 @@ then
     sudo rm ~/.gitignore
     sudo rm ~/.bashrc
     rm ~/.conkyrc
-    sudo apt-get -y remove exuberant-ctags cscope build-essential cmake python3-dev python2.7-dev ack-grep silversearcher-ag conky-all
+    sudo apt-get -y remove $packages
     sudo apt-get -y autoremove
     sudo apt-get -y autoclean
+    echo "When you are cleaning, why do you need me ? :'("
+    rm -rvf ~/Linux-Set-up
 fi
 
 if [ "$1" == "vim" ] || [ "$1" == "all" ] || [ $# -ne 1 ];
@@ -46,7 +49,7 @@ then
 
     #TODO : Need to seperate depencies according to the distro.
     echo "Installing all the dependencies "
-    sudo apt-get -y install vim  exuberant-ctags cscope build-essential cmake python3-dev python2.7-dev ack-grep silversearcher-ag
+    sudo apt-get -y install $packages
 
     echo "Replacing the .vimrc files "
     sudo rm ~/.vimrc
@@ -115,13 +118,6 @@ then
     ln -s ~/Linux-Set-up/rc_files/bashrc ~/.bashrc
 fi
 
-if [ "$1" == "conky" ] || [ "$1" == "all" ];
-then
-    sudo apt -y install conky-all
-    echo "Putting in the .conkyrc files"
-    rm ~/.conkyrc
-    ln -s ~/Linux-Set-up/rc_files/conkyrc ~/.conkyrc
-fi
 
 if [ "$1" == "packs" ] || [ "$1" == "all" ];
 then
