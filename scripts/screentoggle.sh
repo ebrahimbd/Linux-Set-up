@@ -8,5 +8,5 @@ then
     pkill screensaver.sh
     exit 1
 else
-    ./~/Linux-Set-up/script/screensaver.sh &
+    ~/Linux-Set-up/scripts/screensaver.sh &
 fi

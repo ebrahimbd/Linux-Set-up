@@ -1,7 +1,7 @@
 #!/bin/bash
 
 files=(~/Linux-Set-up/wallpaper/*)
-transition_image=~/Linux-Set-up/.useless/transition.jpg
+transition_image=/tmp/transition.jpg
 counter=0
 wallpaper="${files[RANDOM % ${#files[@]}]}"
 
