@@ -18,7 +18,7 @@ then
 fi
 
 uservar=$(whoami)
-packages="vim exuberant-ctags cscope build-essential cmake python3-dev python2.7-dev ack-grep silversearcher-ag"
+packages="vim exuberant-ctags cscope build-essential cmake python3-dev python2.7-dev ack-grep silversearcher-ag curl"
 
 echo "Installation being carried out for user $uservar only"
 
@@ -41,22 +41,20 @@ fi
 
 if [ "$1" == "vim" ] || [ "$1" == "all" ] || [ $# -ne 1 ];
 then
-    # Vim set up
-    echo "Installing Vundle "
-    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-    sudo chown $uservar ~/.vim
-    sudo chown $uservar ~/.vim/bundle
-
     #TODO : Need to seperate depencies according to the distro.
     echo "Installing all the dependencies "
     sudo apt-get -y install $packages
+
+    # Vim set up
+    curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
     echo "Replacing the .vimrc files "
     sudo rm ~/.vimrc
     ln -s ~/Linux-Set-up/rc_files/vimrc ~/.vimrc
 
     echo "Installing all the plugins "
-    vim --cmd silent! +PluginInstall +qal
+    vim --cmd silent! +PlugInstall +qal
 
     mkdir ~/.vim/undo
     sudo chown $uservar ~/.vim/undo
@@ -89,17 +87,11 @@ then
     sudo chown $uservar ~/.viminfo
 fi
 
-if [ "$1" == "update" ] || [ "$1" == "all" ];
+if [ "$1" == "update" ];
 then
     echo "Updating the installed plugin"
-    vim +PluginUpdate +qal
-fi
-
-if [ "$1" == "ycm" ] || [ "$1" == "all" ];
-then
-    echo "Installing YCM engine and updating it. "
-    cd ~/.vim/bundle/YouCompleteMe
-    sudo ./install.py --clang-completer
+    vim +PlugUpdate +qal
+    vim +PlugUpgrade +qal
 fi
 
 if [ "$1" == "git" ] || [ "$1" == "all" ];
