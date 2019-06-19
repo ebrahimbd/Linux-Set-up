@@ -6,16 +6,16 @@ call plug#begin('~/.vim/plugged')
 Plug 'airblade/vim-gitgutter'
 Plug 'cohama/lexima.vim'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'dhruvasagar/vim-table-mode'
+Plug 'dhruvasagar/vim-table-mode', { 'on':'TableModeToggle' }
 Plug 'ervandew/supertab'
 Plug 'flazz/vim-colorschemes'
 Plug 'godlygeek/tabular'
-Plug 'hari-rangarajan/cctree'
+Plug 'hari-rangarajan/cctree', { 'for':'c' }
 Plug 'honza/vim-snippets'
 Plug 'kana/vim-submode'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'majutsushi/tagbar'
-Plug 'mbbill/undotree'
+Plug 'mbbill/undotree', { 'on':'UndotreeToggle' }
 Plug 'mileszs/ack.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'SirVer/ultisnips'
@@ -23,8 +23,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'Valloric/YouCompleteMe', { 'do': 'sudo ./install.py --clang-completer' }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'vim-scripts/DoxygenToolkit.vim'
-Plug 'vim-scripts/a.vim'
+Plug 'vim-scripts/DoxygenToolkit.vim', { 'on':'Dox' }
+Plug 'vim-scripts/a.vim', { 'for':'c' }
 Plug 'yggdroot/indentline'
 Plug 'FelikZ/ctrlp-py-matcher'
 
@@ -74,6 +74,7 @@ nnoremap <leader>u                 :UndotreeToggle<CR>
 nnoremap <leader>x                 :bd<CR>
 nnoremap <leader>p                 :CtrlPTag
 nnoremap <leader>1                 :let @/ = ""<CR>
+nnoremap <leader>ta                :TableModeToggle<CR>
 
 colo heroku-terminal
 set bs=2

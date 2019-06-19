@@ -24,7 +24,6 @@ echo "Installation being carried out for user $uservar only"
 
 if [ "$1" == "clean" ];
 then
-    sudo rm -rvf ~/.vim/bundle
     sudo rm ~/.vimrc
     sudo rm ~/.ackrc
     sudo rm -rvf ~/.vim
@@ -36,7 +35,6 @@ then
     sudo apt-get -y autoremove
     sudo apt-get -y autoclean
     echo "When you are cleaning, why do you need me ? :'("
-    rm -rvf ~/Linux-Set-up
 fi
 
 if [ "$1" == "vim" ] || [ "$1" == "all" ] || [ $# -ne 1 ];
@@ -45,8 +43,10 @@ then
     echo "Installing all the dependencies "
     sudo apt-get -y install $packages
 
+    mkdir -p ~/.vim/autoload
+
     # Vim set up
-    curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+    curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
     echo "Replacing the .vimrc files "
@@ -78,10 +78,10 @@ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     ln -s ~/Linux-Set-up/syntax/c.vim ~/.vim/after/syntax/c.vim
 
     echo "Setting up the colorschemes "
-    sudo rm ~/.vim/bundle/vim-colorschemes/colors/heroku-terminal.vim
-    sudo ln -s ~/Linux-Set-up/colors/heroku-terminal.vim ~/.vim/bundle/vim-colorschemes/colors/heroku-terminal.vim
-    sudo rm ~/.vim/bundle/vim-airline-themes/autoload/airline/themes/badwolf.vim
-    sudo ln -s ~/Linux-Set-up/colors/badwolf.vim ~/.vim/bundle/vim-airline-themes/autoload/airline/themes/badwolf.vim
+    sudo rm ~/.vim/plugged/vim-colorschemes/colors/heroku-terminal.vim
+    sudo ln -s ~/Linux-Set-up/colors/heroku-terminal.vim ~/.vim/plugged/vim-colorschemes/colors/heroku-terminal.vim
+    sudo rm ~/.vim/plugged/vim-airline-themes/autoload/airline/themes/badwolf.vim
+    sudo ln -s ~/Linux-Set-up/colors/badwolf.vim ~/.vim/plugged/vim-airline-themes/autoload/airline/themes/badwolf.vim
 
     echo "Resetting .viminfo to remove ownership of root"
     sudo chown $uservar ~/.viminfo
