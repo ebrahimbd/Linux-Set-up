@@ -42,12 +42,20 @@ then
     #TODO : Need to seperate depencies according to the distro.
     echo "Installing all the dependencies "
     sudo apt-get -y install $packages
+    # clone
+    git clone https://github.com/powerline/fonts.git --depth=1
+    # install
+    cd fonts
+    ./install.sh
+    # clean-up a bit
+    cd ..
+    rm -rf fonts
 
     mkdir -p ~/.vim/autoload
 
     # Vim set up
     curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
     echo "Replacing the .vimrc files "
     sudo rm ~/.vimrc
