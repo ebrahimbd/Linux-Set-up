@@ -144,3 +144,5 @@ URL     : https://www.vim.org/scripts/script.php?script_id=3064
 ## heroku-terminal.vim
 
 - Little change to the defaults one
+
+NOTE : Console Configuration uses Hack 10 as Font.
