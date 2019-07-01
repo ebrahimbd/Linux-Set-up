@@ -4,6 +4,9 @@ files=(~/Linux-Set-up/wallpaper/*)
 transition_image=/tmp/transition.jpg
 counter=0
 wallpaper="${files[RANDOM % ${#files[@]}]}"
+transition_rate=3
+transition_time=0.0001
+delay_time=30
 
 for pid in $(pidof -x test.sh); do
     if [ $pid != $$ ]; then
@@ -16,15 +19,15 @@ while true
 do
     #echo $wallpaper
     feh --bg-scale $wallpaper
-    sleep 60
+    sleep $delay_time
     while true
     do
-        counter=$(( $counter+4 ))
+        counter=$(( $counter+$transition_rate ))
         #echo $counter
         convert $wallpaper -fill black -colorize $counter% $transition_image
         feh --bg-scale $transition_image
-        sleep 0.002
-        if [ $counter -ge 90 ]
+        sleep $transition_time
+        if [ $counter -ge 98 ]
         then
             break
         fi
@@ -32,12 +35,12 @@ do
     wallpaper="${files[RANDOM % ${#files[@]}]}"
     while true
     do
-        counter=$(( $counter-4 ))
+        counter=$(( $counter-$transition_rate ))
         #echo $counter
         convert $wallpaper -fill black -colorize $counter% $transition_image
         feh --bg-scale $transition_image
-        sleep 0.002
-        if [ $counter -le 10 ]
+        sleep $transition_time
+        if [ $counter -le 2 ]
         then
             break
         fi
