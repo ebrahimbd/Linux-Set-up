@@ -4,9 +4,10 @@ pid=$(pidof -x screensaver.sh)
 
 if [ $pid ]
 then
-    echo "PID is $pid"
+    notify-send "PID is $pid"
     pkill screensaver.sh
     exit 1
 else
-    ./~/Linux-Set-up/script/screensaver.sh &
+    notify-send "Starting the Screen Saver Services"
+    ~/Linux-Set-up/scripts/screensaver.sh &
 fi

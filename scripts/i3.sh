@@ -1,6 +1,6 @@
 #!/bin/bash
 
-packages="i3 lxappearance thunar compton i3blocks feh shutter blueman rofi arandr conky-all"
+packages="i3 lxappearance thunar compton i3blocks feh shutter blueman rofi arandr conky-all w3m jshon"
 
 echo "Installing required packages for i3"
 sudo apt -y install $packages
@@ -10,6 +10,7 @@ sudo cp ~/Linux-Set-up/i3/backupi3config /usr/bin/
 
 echo "Putting the configuration files in place"
 rm ~/.config/i3/config
+mkdir -p ~/.config/i3/
 cp -r ~/Linux-Set-up/i3/config ~/.config/i3/config
 
 echo "Installing the fonts-awesome"
@@ -23,6 +24,7 @@ sudo ln -s ~/Linux-Set-up/i3/i3blocks.conf ~/.i3blocks.conf
 
 echo "Copying rofi configuration"
 sudo rm ~/.config/rofi/*
+mkdir -p ~/.config/rofi/
 sudo ln -s ~/Linux-Set-up/i3/rofi_config ~/.config/rofi/config.rasi
 
 echo "Copying the compton configuration"

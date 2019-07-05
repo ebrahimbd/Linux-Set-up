@@ -1,53 +1,41 @@
+" Specify a directory for plugins
+" - For Neovim: ~/.local/share/nvim/plugged
+" - Avoid using standard Vim directory names like 'plugin'
+call plug#begin('~/.vim/plugged')
+
+Plug 'airblade/vim-gitgutter'
+Plug 'cohama/lexima.vim'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'dhruvasagar/vim-table-mode', { 'on':'TableModeToggle' }
+Plug 'ervandew/supertab'
+Plug 'flazz/vim-colorschemes'
+Plug 'godlygeek/tabular'
+Plug 'hari-rangarajan/cctree', { 'for':'c' }
+Plug 'honza/vim-snippets'
+Plug 'kana/vim-submode'
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'majutsushi/tagbar'
+Plug 'mbbill/undotree', { 'on':'UndotreeToggle' }
+Plug 'mileszs/ack.vim'
+Plug 'scrooloose/nerdcommenter'
+Plug 'SirVer/ultisnips'
+Plug 'tpope/vim-fugitive'
+Plug 'Valloric/YouCompleteMe', { 'do': 'sudo ./install.py --clang-completer' }
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-scripts/DoxygenToolkit.vim', { 'on':'Dox' }
+Plug 'vim-scripts/a.vim', { 'for':'c' }
+Plug 'yggdroot/indentline'
+Plug 'FelikZ/ctrlp-py-matcher'
+
+" Initialize plugin system
+call plug#end()
+
+" -------------------------------------------------------------------------------------------------------------------"
+
 set nocompatible              " be iMproved, required
 set laststatus=2
-
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'a.vim'
-Plugin 'cohama/lexima.vim'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'dhruvasagar/vim-table-mode'
-Plugin 'ervandew/supertab'
-Plugin 'flazz/vim-colorschemes'
-Plugin 'godlygeek/tabular'
-Plugin 'hari-rangarajan/cctree'
-Plugin 'honza/vim-snippets'
-Plugin 'kana/vim-submode'
-Plugin 'ludovicchabant/vim-gutentags'
-Plugin 'majutsushi/tagbar'
-Plugin 'mbbill/undotree'
-Plugin 'mileszs/ack.vim'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'SirVer/ultisnips'
-Plugin 'tpope/vim-fugitive'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'vim-scripts/DoxygenToolkit.vim'
-Plugin 'yggdroot/indentline'
-Plugin 'FelikZ/ctrlp-py-matcher'
-
-" All of your Plugins must be added before the following line
-"
-call vundle#end()            " required
 filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
 
 "Function to toggle the mouse [Key = leader + m]
 function! ToggleMouse()
@@ -86,6 +74,7 @@ nnoremap <leader>u                 :UndotreeToggle<CR>
 nnoremap <leader>x                 :bd<CR>
 nnoremap <leader>p                 :CtrlPTag
 nnoremap <leader>1                 :let @/ = ""<CR>
+nnoremap <leader>ta                :TableModeToggle<CR>
 
 colo heroku-terminal
 set bs=2

@@ -18,13 +18,12 @@ then
 fi
 
 uservar=$(whoami)
-packages="vim exuberant-ctags cscope build-essential cmake python3-dev python2.7-dev ack-grep silversearcher-ag"
+packages="vim exuberant-ctags cscope build-essential cmake python3-dev python2.7-dev ack-grep silversearcher-ag curl"
 
 echo "Installation being carried out for user $uservar only"
 
 if [ "$1" == "clean" ];
 then
-    sudo rm -rvf ~/.vim/bundle
     sudo rm ~/.vimrc
     sudo rm ~/.ackrc
     sudo rm -rvf ~/.vim
@@ -36,27 +35,34 @@ then
     sudo apt-get -y autoremove
     sudo apt-get -y autoclean
     echo "When you are cleaning, why do you need me ? :'("
-    rm -rvf ~/Linux-Set-up
 fi
 
 if [ "$1" == "vim" ] || [ "$1" == "all" ] || [ $# -ne 1 ];
 then
-    # Vim set up
-    echo "Installing Vundle "
-    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-    sudo chown $uservar ~/.vim
-    sudo chown $uservar ~/.vim/bundle
-
     #TODO : Need to seperate depencies according to the distro.
     echo "Installing all the dependencies "
     sudo apt-get -y install $packages
+    # clone
+    git clone https://github.com/powerline/fonts.git --depth=1
+    # install
+    cd fonts
+    ./install.sh
+    # clean-up a bit
+    cd ..
+    rm -rf fonts
+
+    mkdir -p ~/.vim/autoload
+
+    # Vim set up
+    curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
     echo "Replacing the .vimrc files "
     sudo rm ~/.vimrc
     ln -s ~/Linux-Set-up/rc_files/vimrc ~/.vimrc
 
     echo "Installing all the plugins "
-    vim --cmd silent! +PluginInstall +qal
+    vim --cmd silent! +PlugInstall +qal
 
     mkdir ~/.vim/undo
     sudo chown $uservar ~/.vim/undo
@@ -80,26 +86,20 @@ then
     ln -s ~/Linux-Set-up/syntax/c.vim ~/.vim/after/syntax/c.vim
 
     echo "Setting up the colorschemes "
-    sudo rm ~/.vim/bundle/vim-colorschemes/colors/heroku-terminal.vim
-    sudo ln -s ~/Linux-Set-up/colors/heroku-terminal.vim ~/.vim/bundle/vim-colorschemes/colors/heroku-terminal.vim
-    sudo rm ~/.vim/bundle/vim-airline-themes/autoload/airline/themes/badwolf.vim
-    sudo ln -s ~/Linux-Set-up/colors/badwolf.vim ~/.vim/bundle/vim-airline-themes/autoload/airline/themes/badwolf.vim
+    sudo rm ~/.vim/plugged/vim-colorschemes/colors/heroku-terminal.vim
+    sudo ln -s ~/Linux-Set-up/colors/heroku-terminal.vim ~/.vim/plugged/vim-colorschemes/colors/heroku-terminal.vim
+    sudo rm ~/.vim/plugged/vim-airline-themes/autoload/airline/themes/badwolf.vim
+    sudo ln -s ~/Linux-Set-up/colors/badwolf.vim ~/.vim/plugged/vim-airline-themes/autoload/airline/themes/badwolf.vim
 
     echo "Resetting .viminfo to remove ownership of root"
     sudo chown $uservar ~/.viminfo
 fi
 
-if [ "$1" == "update" ] || [ "$1" == "all" ];
+if [ "$1" == "update" ];
 then
     echo "Updating the installed plugin"
-    vim +PluginUpdate +qal
-fi
-
-if [ "$1" == "ycm" ] || [ "$1" == "all" ];
-then
-    echo "Installing YCM engine and updating it. "
-    cd ~/.vim/bundle/YouCompleteMe
-    sudo ./install.py --clang-completer
+    vim +PlugUpdate +qal
+    vim +PlugUpgrade +qal
 fi
 
 if [ "$1" == "git" ] || [ "$1" == "all" ];
