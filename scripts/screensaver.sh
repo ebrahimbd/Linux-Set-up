@@ -4,9 +4,9 @@ files=(~/Linux-Set-up/wallpaper/*)
 transition_image=/tmp/transition.jpg
 counter=0
 wallpaper="${files[RANDOM % ${#files[@]}]}"
-transition_rate=3
-transition_time=0.0001
-delay_time=30
+transition_rate=11
+transition_time=0.0005
+delay_time=7
 
 for pid in $(pidof -x test.sh); do
     if [ $pid != $$ ]; then
