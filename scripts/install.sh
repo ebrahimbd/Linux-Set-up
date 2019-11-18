@@ -18,7 +18,7 @@ then
 fi
 
 uservar=$(whoami)
-packages="vim exuberant-ctags cscope build-essential cmake python3-dev python2.7-dev ack-grep silversearcher-ag curl"
+packages="vim exuberant-ctags build-essential cmake python3-dev python2.7-dev ack-grep silversearcher-ag curl"
 
 echo "Installation being carried out for user $uservar only"
 

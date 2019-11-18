@@ -6,7 +6,7 @@ counter=0
 wallpaper="${files[RANDOM % ${#files[@]}]}"
 transition_rate=11
 transition_time=0.0005
-delay_time=7
+delay_time=3600
 
 for pid in $(pidof -x test.sh); do
     if [ $pid != $$ ]; then

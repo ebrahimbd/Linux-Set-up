@@ -95,12 +95,13 @@ bindsym $mod+a focus parent
 
 set $wp1  "1 : Terminal "
 set $wp2  "2 : Browser "
+set $wp3  "3 : Flock"
 set $wp10 "10 : Chat "
 
 # switch to workspace
 bindsym $mod+1 workspace $wp1
 bindsym $mod+2 workspace $wp2
-bindsym $mod+3 workspace 3
+bindsym $mod+3 workspace $wp3
 bindsym $mod+4 workspace 4
 bindsym $mod+5 workspace 5
 bindsym $mod+6 workspace 6
@@ -112,7 +113,7 @@ bindsym $mod+0 workspace $wp10
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $wp1
 bindsym $mod+Shift+2 move container to workspace $wp2
-bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+3 move container to workspace $wp3
 bindsym $mod+Shift+4 move container to workspace 4
 bindsym $mod+Shift+5 move container to workspace 5
 bindsym $mod+Shift+6 move container to workspace 6
@@ -123,6 +124,7 @@ bindsym $mod+Shift+0 move container to workspace $wp10
 
 assign [class="konsole"] $wp1
 assign [class="Firefox"] $wp2
+assign [class="flock-chat"] $wp2
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -159,6 +161,7 @@ bindsym $mod+z mode "resize"
 
 exec --no-startup-id compton
 exec --no-startup-id firefox
+exec --no-startup-id flock-chat
 exec --no-startup-id konsole
 exec --no-startup-id ~/Linux-Set-up/scripts/capslockoff.sh
 exec --no-startup-id ~/Linux-Set-up/scripts/conky.sh
