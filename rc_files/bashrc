@@ -148,7 +148,7 @@ function stopwatch(){
     done
 }
 
-alias gsl="git stash list"
+alias gsl="git stash list --date=local"
 
 function gsa() {
     #Applying a stash provided arguement number
