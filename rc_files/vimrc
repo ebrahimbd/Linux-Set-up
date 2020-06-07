@@ -87,7 +87,7 @@ set nu
 set showmatch
 set tabstop=4 shiftwidth=4 expandtab
 set t_Co=256
-set textwidth=118
+"set textwidth=118
 set undodir=$HOME/.vim/undo " where to save undo histories
 set undofile                " Save undos after file closes
 set undolevels=1000         " How many undos
@@ -126,7 +126,7 @@ endif
 "Indent every file before saving
 autocmd BufWritePre *.h :normal gg=G``
 autocmd BufWritePre *.c :normal gg=G``
-autocmd BufWritePre *.py :normal gg=G``
+"autocmd BufWritePre *.py :normal gg=G``
 autocmd BufWritePre .*rc :normal gg=G``
 
 "Remove whitespace before saving
