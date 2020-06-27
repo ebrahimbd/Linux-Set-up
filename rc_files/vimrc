@@ -27,6 +27,8 @@ Plug 'vim-scripts/DoxygenToolkit.vim', { 'on':'Dox' }
 Plug 'vim-scripts/a.vim', { 'for':'c' }
 Plug 'yggdroot/indentline'
 Plug 'FelikZ/ctrlp-py-matcher'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'maxbrunsfeld/vim-yankstack'
 
 " Initialize plugin system
 call plug#end()
@@ -72,7 +74,7 @@ nnoremap <leader>t                 :TagbarOpen fj<CR>
 nnoremap <leader>tx                :TagbarClose<CR>
 nnoremap <leader>u                 :UndotreeToggle<CR>
 nnoremap <leader>x                 :bd<CR>
-nnoremap <leader>p                 :CtrlPTag
+nnoremap <leader>p                 :CtrlPTag<CR>
 nnoremap <leader>1                 :let @/ = ""<CR>
 nnoremap <leader>ta                :TableModeToggle<CR>
 
@@ -124,13 +126,13 @@ if has("autocmd")
 endif
 
 "Indent every file before saving
-autocmd BufWritePre *.h :normal gg=G``
-autocmd BufWritePre *.c :normal gg=G``
-autocmd BufWritePre *.py :normal gg=G``
-autocmd BufWritePre .*rc :normal gg=G``
+"autocmd BufWritePre *.h :normal gg=G``
+"autocmd BufWritePre *.c :normal gg=G``
+"autocmd BufWritePre *.py :normal gg=G``
+"autocmd BufWritePre .*rc :normal gg=G``
 
 "Remove whitespace before saving
-autocmd BufWritePre * :%s/\s\+$//e
+"autocmd BufWritePre * :%s/\s\+$//e
 
 "Open Tagbar by default for only C files
 autocmd Filetype c :TagbarOpen
@@ -260,7 +262,8 @@ call submode#map('WindowsMode', 'n', '', 'w', '<C-w><C-w>')
 let g:submode_keep_leaving_key = 0
 let g:submode_timeout = 0
 
-let g:DoxygenToolkit_compactDoc = "yes"
+"let g:DoxygenToolkit_compactDoc = "yes"
+let g:DoxygenToolkit_commentType = "C++"
 
 let g:ctrlp_extensions = ['tag']
 

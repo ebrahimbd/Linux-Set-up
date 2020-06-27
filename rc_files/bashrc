@@ -190,6 +190,7 @@ function pull(){
 }
 
 alias setup="cd ~/Linux-Set-up"
+alias cpwd="pwd | xclip -selection clipboard"
 
 alias
 
